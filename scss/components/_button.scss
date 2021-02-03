@@ -6,7 +6,7 @@
     text-transform: uppercase;
 
     &--transparent {
-        background-color: $c-secondaryTrans;
-        border: 1px solid $c-primaryTrans;
+        background-color: rgba($c-secondary, .2);
+        border: 1px solid rgba($c-primary, .6);
     }
 }

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initializeSplideSlider();
 
-    mainNav.addEventListener('click', showBurgerMenu);
+    mainNav.addEventListener('click', handleBurgerMenu);
 });
 
 const mainNav = document.getElementById('main-nav');
@@ -25,11 +25,23 @@ const initializeSplideSlider = () => {
     }).mount();
 };
 
-const showBurgerMenu = () => {
+const showBurgerMenu = (menu, btn) => {
+    const items = [menu, btn];
+
+    items.forEach(item => {
+        item.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            item.style.pointerEvents = 'auto';
+        }, 400);
+
+        item === menu ? item.classList.toggle('l-main-nav--active') : item.classList.toggle('c-burger--active');
+    });
+};
+
+const handleBurgerMenu = () => {
     const burgerBtn = mainNav.querySelector('.c-burger');
     const menu = mainNav.querySelector('.l-main-nav');
 
-    document.body.classList.toggle('js-mobile-menu-open');
-    burgerBtn.classList.toggle('c-burger--active');
-    menu.classList.toggle('l-main-nav--active');
+    showBurgerMenu(menu, burgerBtn);
 };

@@ -49,7 +49,7 @@ html {
 }
 
 .c-button--transparent {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(10, 10, 10, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
@@ -89,20 +89,22 @@ html {
 
 .c-burger {
   position: fixed;
-  top: 25px;
-  right: 25px;
+  top: 30px;
+  right: 30px;
   z-index: 3;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
+  background-color: rgba(10, 10, 10, 0.2);
+  border-radius: 50%;
 }
 
 .c-burger__inner, .c-burger::before, .c-burger::after {
   content: "";
   position: absolute;
   left: 50%;
-  width: 70%;
-  height: 2px;
+  width: 55%;
+  height: 3px;
   background-color: #fff;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -117,13 +119,13 @@ html {
 }
 
 .c-burger::before {
-  top: 25%;
+  top: 30%;
   -webkit-transform-origin: right;
           transform-origin: right;
 }
 
 .c-burger::after {
-  top: 75%;
+  top: 70%;
   -webkit-transform-origin: right;
           transform-origin: right;
 }
@@ -134,19 +136,90 @@ html {
 }
 
 .c-burger--active::before {
-  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-          transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-65%, -50%) rotate(-45deg);
+          transform: translate(-65%, -50%) rotate(-45deg);
 }
 
 .c-burger--active::after {
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-65%, -50%) rotate(45deg);
+          transform: translate(-65%, -50%) rotate(45deg);
+}
+
+.c-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 230px;
+  margin-bottom: 50px;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.c-card--electrical {
+  background-image: url(../img/offer-1.jpg);
+}
+
+.c-card--monitoring {
+  background-image: url(../img/offer-2.jpg);
+}
+
+.c-card--lan {
+  background-image: url(../img/offer-3.jpg);
+}
+
+.c-card__inner {
+  height: 100%;
+  width: 30%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: rgba(10, 10, 10, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 10px 0 0 10px;
+}
+
+.c-card__icon {
+  width: 3.5rem;
+}
+
+.c-card__heading {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  font-weight: 400;
 }
 
 .l-container {
+  padding: 3rem 2.2rem;
+  text-align: center;
+}
+
+.l-container__heading {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.l-container__paragraph {
+  line-height: 1.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.l-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   display: -webkit-box;
@@ -159,8 +232,6 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: rgba(0, 0, 0, 0.2);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   text-align: center;
   color: white;
   text-transform: uppercase;
@@ -179,7 +250,7 @@ html {
   width: 100%;
   height: 100vh;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(10, 10, 10, 0.5);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   display: -webkit-box;
@@ -195,10 +266,10 @@ html {
   opacity: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: opacity .4s, -webkit-transform .1s .5s;
-  transition: opacity .4s, -webkit-transform .1s .5s;
-  transition: transform .1s .5s, opacity .4s;
-  transition: transform .1s .5s, opacity .4s, -webkit-transform .1s .5s;
+  -webkit-transition: opacity .4s, -webkit-transform .1s .3s;
+  transition: opacity .4s, -webkit-transform .1s .3s;
+  transition: transform .1s .3s, opacity .4s;
+  transition: transform .1s .3s, opacity .4s, -webkit-transform .1s .3s;
 }
 
 .l-main-nav--active {
@@ -256,7 +327,19 @@ html {
   width: 2rem;
 }
 
+.l-stack,
+.l-stack--horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 #main-header {
+  position: relative;
   width: 100%;
   height: 100vh;
 }

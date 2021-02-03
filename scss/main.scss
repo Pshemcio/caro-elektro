@@ -4,16 +4,19 @@
 @import 'settings/base';
 
 @import 'components/splide-settings';
-@import 'components/buttons';
+@import 'components/button';
 @import 'components/hero';
 @import 'components/burger';
+@import 'components/cards';
 // @import 'components/menu';
 // @import 'components/logo';
 
 @import 'layout/container';
+@import 'layout/wrapper';
 @import 'layout/navigation';
 @import 'layout/footer';
 @import 'layout/forms';
+@import 'layout/stack';
 
 @import 'pages/home';
 @import 'pages/installations';

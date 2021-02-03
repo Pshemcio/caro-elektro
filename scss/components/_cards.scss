@@ -1,0 +1,44 @@
+.c-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 230px;
+    margin-bottom: 50px;
+    background-size: cover;
+    border-radius: 10px;
+
+    &--electrical {
+        background-image: url(../img/offer-1.jpg);
+    }
+
+    &--monitoring {
+        background-image: url(../img/offer-2.jpg);
+    }
+
+    &--lan {
+        background-image: url(../img/offer-3.jpg);
+    }
+
+    &__inner {
+        height: 100%;
+        width: 30%;
+        display: grid;
+        place-items: center;
+        background-color: rgba($c-secondary, .25);
+        backdrop-filter: blur(10px);
+        border-radius: 10px 0 0 10px;
+    }
+
+    &__icon {
+        width: $s-stack-icon;
+    }
+
+    &__heading {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        font-weight: 400;
+    }
+}

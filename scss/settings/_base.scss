@@ -4,3 +4,12 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.js-mobile-menu-open {
+    overflow: hidden;
+    height: 100vh;
+}

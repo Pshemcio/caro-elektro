@@ -1,8 +1,61 @@
-.l-main-nav {
+#main-nav {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100vw;
     z-index: 2;
+}
+
+.l-main-nav {
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba($c-secondary, .5);
+    backdrop-filter: blur(10px);
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform .4s;
+
+    &--active {
+        transform: translateX(100vw);
+    }
+}
+
+.c-menu {
+    list-style: none;
+    text-transform: uppercase;
+    margin: 15px;
+    background-color: $c-tertiary;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+
+    &__item {
+        width: 100%;
+    }
+
+    &__link {
+        @include navLink;
+        width: 100%;
+        text-align: center;
+        padding: 1.6rem 0;
+        font-size: 1.35rem
+    }
+}
+
+.c-logo {
+    @include navLink;
+    display: flex;
+    justify-content: center;
+
+    &__text {
+        margin-left: 8px;
+        font-size: $s-logo / 1.8;
+        line-height: $s-logo;
+    }
+
+    &__icon {
+        width: $s-logo;
+    }
 }

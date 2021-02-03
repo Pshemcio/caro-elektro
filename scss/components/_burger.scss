@@ -1,14 +1,51 @@
 .c-burger {
+    $self: &;
     position: fixed;
     top: $s-burger / 2;
     right: $s-burger / 2;
+    z-index: 3;
     width: $s-burger;
     height: $s-burger;
-    background-color: pink;
+    cursor: pointer;
+
+    &__inner,
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 70%;
+        height: 2px;
+        background-color: $c-primary;
+        transform: translate(-50%, -50%);
+        transition: transform .4s;
+    }
 
     &__inner {
-        width: 80%;
-        height: 1px;
-        background-color: black;
+        top: 50%;
+    }
+
+    &::before {
+        top: 25%;
+        transform-origin: right;
+    }
+
+    &::after {
+        top: 75%;
+        transform-origin: right;
+    }
+
+    &--active {
+        #{ $self }__inner {
+            transform: translate(100%, -50%) rotate(150deg) scale(0);
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
     }
 }

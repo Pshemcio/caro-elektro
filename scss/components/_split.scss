@@ -1,0 +1,63 @@
+.l-split {
+    display: flex;
+    flex-direction: column;
+    background-color: $c-tertiary;
+    color: $c-primary;
+    text-align: center;
+
+    &--reverse {
+        background-color: $c-secondaryLight;
+    }
+
+    &__image,
+    &__content {
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+    }
+
+    &__image {
+        height: 40vh;
+
+        &--home {
+            background-image: url(../img/about-us.jpg);
+        }
+
+        &--camera {
+            background-image: url(../img/about-us-2.jpg);
+        }
+    }
+
+    &__content {
+        padding: 3rem 2rem;
+    }
+
+    &__heading {
+        font-weight: 500;
+    }
+
+    &__paragraph {
+        font-weight: 300;
+    }
+}
+
+.c-list {
+    list-style: none;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        font-weight: 500;
+        font-size: .95rem;
+    }
+
+    &__icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+}
+
+.fa-user-shield {
+    transform: translateX(8px);
+}

@@ -1,4 +1,8 @@
 .c-hero {
+    color: $c-primary;
+    text-align: center;
+    text-transform: uppercase;
+
     &__heading {
         font-weight: 400;
         font-size: 2.4rem;
@@ -18,7 +22,7 @@
             height: 1px;
             position: absolute;
             top: 50%;
-            background-color: #fff;
+            background-color: $c-primary;
         }
 
         &::before {

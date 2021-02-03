@@ -1,5 +1,5 @@
 //colors
-$c-primary: #fff;
+$c-primary: #f2f2f2;
 $c-secondary: rgb(10, 10, 10);
 $c-secondaryLight: #7C7b7a;
 $c-tertiary: #276a9a;
@@ -12,3 +12,8 @@ $s-stack-icon: 3.5rem;
 
 //margins
 $m-hero-children: 26px;
+
+//css variables
+:root {
+    font-size: 17px;
+}

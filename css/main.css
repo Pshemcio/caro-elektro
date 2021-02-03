@@ -1,3 +1,7 @@
+:root {
+  font-size: 17px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -42,7 +46,7 @@ html {
 
 .c-button {
   padding: 1rem 2.2rem;
-  color: #fff;
+  color: #f2f2f2;
   border-radius: 6px;
   font-size: 1rem;
   text-transform: uppercase;
@@ -50,7 +54,13 @@ html {
 
 .c-button--transparent {
   background-color: rgba(10, 10, 10, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(242, 242, 242, 0.6);
+}
+
+.c-hero {
+  color: #f2f2f2;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .c-hero__heading {
@@ -72,7 +82,7 @@ html {
   height: 1px;
   position: absolute;
   top: 50%;
-  background-color: #fff;
+  background-color: #f2f2f2;
 }
 
 .c-hero__decoration::before {
@@ -105,7 +115,7 @@ html {
   left: 50%;
   width: 55%;
   height: 3px;
-  background-color: #fff;
+  background-color: #f2f2f2;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-transition: -webkit-transform .4s;
@@ -158,9 +168,11 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 230px;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
   background-size: cover;
   border-radius: 10px;
+  -webkit-box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
+          box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
 }
 
 .c-card--electrical {
@@ -193,15 +205,91 @@ html {
 
 .c-card__heading {
   position: absolute;
-  top: 100%;
+  top: 103%;
   left: 0;
   width: 100%;
   font-weight: 400;
+  color: #0a0a0a;
+}
+
+.l-split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #276a9a;
+  color: #f2f2f2;
+  text-align: center;
+}
+
+.l-split--reverse {
+  background-color: #7C7b7a;
+}
+
+.l-split__image, .l-split__content {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+
+.l-split__image {
+  height: 40vh;
+}
+
+.l-split__image--home {
+  background-image: url(../img/about-us.jpg);
+}
+
+.l-split__image--camera {
+  background-image: url(../img/about-us-2.jpg);
+}
+
+.l-split__content {
+  padding: 3rem 2rem;
+}
+
+.l-split__heading {
+  font-weight: 500;
+}
+
+.l-split__paragraph {
+  font-weight: 300;
+}
+
+.c-list {
+  list-style: none;
+}
+
+.c-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+.c-list__icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.fa-user-shield {
+  -webkit-transform: translateX(8px);
+          transform: translateX(8px);
 }
 
 .l-container {
   padding: 3rem 2.2rem;
   text-align: center;
+  background-color: #f2f2f2;
 }
 
 .l-container__heading {
@@ -213,7 +301,7 @@ html {
 
 .l-container__paragraph {
   line-height: 1.6rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .l-wrapper {
@@ -231,10 +319,10 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.l-wrapper--dark {
   background-color: rgba(0, 0, 0, 0.2);
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
 }
 
 #main-nav {
@@ -297,7 +385,7 @@ html {
 
 .c-menu__link {
   display: block;
-  color: #fff;
+  color: #f2f2f2;
   text-decoration: none;
   width: 100%;
   text-align: center;
@@ -307,7 +395,7 @@ html {
 
 .c-logo {
   display: block;
-  color: #fff;
+  color: #f2f2f2;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -327,8 +415,7 @@ html {
   width: 2rem;
 }
 
-.l-stack,
-.l-stack--horizontal {
+.l-stack {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,9 +429,5 @@ html {
   position: relative;
   width: 100%;
   height: 100vh;
-}
-
-#offer {
-  min-height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */

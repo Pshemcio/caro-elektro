@@ -4,9 +4,10 @@
     flex-direction: column;
     justify-content: space-between;
     height: 230px;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     background-size: cover;
     border-radius: 10px;
+    box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
 
     &--electrical {
         background-image: url(../img/offer-1.jpg);
@@ -36,9 +37,10 @@
 
     &__heading {
         position: absolute;
-        top: 100%;
+        top: 103%;
         left: 0;
         width: 100%;
         font-weight: 400;
+        color: $c-secondary;
     }
 }

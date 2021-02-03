@@ -5,11 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARO-ELEKTRO</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/splide.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+    <nav class="l-main-nav">
+        <a href="#main-header" class="c-logo">
+            <img src="icons/logo.svg" alt="lighting in circle" class="c-logo__icon">
+            CARO Instalacje Elektryczne
+        </a>
+        <div class="c-burger">
+            <div class="c-burger__inner"></div>
+        </div>
+        <ul class="c-menu">
+            <li class="c-menu__item">
+                <a href="#offer" class="c-menu__link">oferta</a>
+            </li>
+            <li class="c-menu__item">
+                <a href="#about-us" class="c-menu__link">o nas</a>
+            </li>
+            <li class="c-menu__item">
+                <a href="#gallery" class="c-menu__link">galeria</a>
+            </li>
+            <li class="c-menu__item">
+                <a href="#contact" class="c-menu__link">kontakt</a>
+            </li>
+        </ul>
+    </nav>
+    <header id="main-header">
+        <div class="splide header-splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="img/header-1.jpg" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="img/header-3.jpg" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="img/header-4.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="l-container">
+            <div class="c-hero">
+                <h1 class="c-hero__heading">caro-elektro</h1>
+                <p class="c-hero__decoration">
+                    <i class="fas fa-bolt"></i>
+                </p>
+                <p class="c-hero__paragraph">
+                    Zwiększ bezpieczeństwo w swoim domu lub firmie, inwestując w nowoczesne systemy dozoru wizyjnego.
+                </p>
+                <button class="c-button c-button--transparent">
+                    Kontakt
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <div id="main-offer">
+    </div>
+
+    <script src="https://kit.fontawesome.com/a330ae9e9c.js" crossorigin="anonymous"></script>
+    <script src="js/splide.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

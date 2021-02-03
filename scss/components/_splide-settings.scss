@@ -1,0 +1,22 @@
+.header-btns {
+    display: none;
+
+    @include breakpoint(xs) {
+        display: block;
+        background-color: transparent;
+        fill: rgba(255, 255, 255, 0.4);
+        width: 4rem;
+        height: 4rem;
+        transition: fill .4s;
+
+        &:focus,
+        &:hover {
+            fill: rgba(255, 255, 255, 0.8);
+        }
+
+        svg {
+            width: 50%;
+            height: 50%;
+        }
+    }
+}

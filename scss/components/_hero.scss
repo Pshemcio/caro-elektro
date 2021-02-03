@@ -1,0 +1,36 @@
+.c-hero {
+    &__heading {
+        font-weight: 400;
+        font-size: 2.4rem;
+        margin-bottom: $m-hero-children;
+    }
+
+    &__decoration {
+        position: relative;
+        width: 200px;
+        margin: 0 auto $m-hero-children;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            background-color: #fff;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+
+    &__paragraph {
+        display: none;
+    }
+}

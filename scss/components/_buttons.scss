@@ -1,0 +1,12 @@
+.c-button {
+    padding: $s-button (2.2 * $s-button);
+    color: $c-primary;
+    border-radius: 6px;
+    font-size: $s-button;
+    text-transform: uppercase;
+
+    &--transparent {
+        background-color: $c-secondaryTrans;
+        border: 1px solid $c-primaryTrans;
+    }
+}

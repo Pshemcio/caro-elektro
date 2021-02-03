@@ -1,1 +1,133 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-btns {
+  display: none;
+}
+
+@media (min-width: 512px) {
+  .header-btns {
+    display: block;
+    background-color: transparent;
+    fill: rgba(255, 255, 255, 0.4);
+    width: 4rem;
+    height: 4rem;
+    -webkit-transition: fill .4s;
+    transition: fill .4s;
+  }
+  .header-btns:focus, .header-btns:hover {
+    fill: rgba(255, 255, 255, 0.8);
+  }
+  .header-btns svg {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+.c-button {
+  padding: 1rem 2.2rem;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.c-button--transparent {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.c-hero__heading {
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin-bottom: 26px;
+}
+
+.c-hero__decoration {
+  position: relative;
+  width: 200px;
+  margin: 0 auto 26px;
+}
+
+.c-hero__decoration::before, .c-hero__decoration::after {
+  content: '';
+  display: block;
+  width: 40%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  background-color: #fff;
+}
+
+.c-hero__decoration::before {
+  left: 0;
+}
+
+.c-hero__decoration::after {
+  right: 0;
+}
+
+.c-hero__paragraph {
+  display: none;
+}
+
+.c-burger {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: pink;
+}
+
+.c-burger__inner {
+  width: 80%;
+  height: 1px;
+  background-color: black;
+}
+
+.c-menu {
+  display: none;
+}
+
+.c-logo {
+  display: none;
+}
+
+.l-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.l-main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main-offer {
+  min-height: 100vh;
+}
+/*# sourceMappingURL=main.css.map */

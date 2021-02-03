@@ -1,0 +1,14 @@
+.c-burger {
+    position: fixed;
+    top: $s-burger / 2;
+    right: $s-burger / 2;
+    width: $s-burger;
+    height: $s-burger;
+    background-color: pink;
+
+    &__inner {
+        width: 80%;
+        height: 1px;
+        background-color: black;
+    }
+}

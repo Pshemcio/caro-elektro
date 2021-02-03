@@ -17,7 +17,7 @@ const initializeSplideSlider = () => {
         cover: true,
         drag: false,
         pagination: false,
-        width: '100vw',
+        width: '100%',
         height: '100vh',
         classes: {
             arrow: 'splide__arrow header-btns',

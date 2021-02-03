@@ -10,9 +10,11 @@ html {
   scroll-behavior: smooth;
 }
 
-.js-mobile-menu-open {
-  overflow: hidden;
-  height: 100vh;
+.splide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header-btns {
@@ -146,10 +148,16 @@ html {
   top: 50%;
   left: 50%;
   width: 100%;
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: rgba(0, 0, 0, 0.2);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -160,15 +168,15 @@ html {
 
 #main-nav {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   z-index: 2;
 }
 
 .l-main-nav {
   position: absolute;
   top: 0;
-  left: -100vw;
-  width: 100vw;
+  left: 0;
+  width: 100%;
   height: 100vh;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
@@ -181,24 +189,32 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: opacity .4s, -webkit-transform .1s .5s;
+  transition: opacity .4s, -webkit-transform .1s .5s;
+  transition: transform .1s .5s, opacity .4s;
+  transition: transform .1s .5s, opacity .4s, -webkit-transform .1s .5s;
 }
 
 .l-main-nav--active {
-  -webkit-transform: translateX(100vw);
-          transform: translateX(100vw);
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: opacity .4s .1s, -webkit-transform .1s;
+  transition: opacity .4s .1s, -webkit-transform .1s;
+  transition: transform .1s, opacity .4s .1s;
+  transition: transform .1s, opacity .4s .1s, -webkit-transform .1s;
 }
 
 .c-menu {
   list-style: none;
   text-transform: uppercase;
-  margin: 15px;
+  margin: 0 15px;
   background-color: #276a9a;
   border-left: 2px solid white;
   border-right: 2px solid white;
@@ -238,6 +254,11 @@ html {
 
 .c-logo__icon {
   width: 2rem;
+}
+
+#main-header {
+  width: 100%;
+  height: 100vh;
 }
 
 #offer {

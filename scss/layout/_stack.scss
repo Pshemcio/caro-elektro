@@ -1,4 +1,11 @@
 .l-stack {
     display: flex;
     flex-direction: column;
+
+    &--contact {
+        flex-direction: row;
+        width: 70%;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
 }

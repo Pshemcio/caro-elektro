@@ -207,6 +207,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 
         // define options (if needed)
         options = {
+            bgOpacity: .9,
 
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),

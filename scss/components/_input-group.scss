@@ -1,0 +1,20 @@
+.c-input-group {
+
+    &__input,
+    &__textarea {
+        border: 1px solid $c-tertiary;
+        color: $c-tertiary;
+        padding: 10px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    &__textarea {
+        height: 20vh;
+    }
+
+    &__file {
+        margin-bottom: 15px;
+    }
+}

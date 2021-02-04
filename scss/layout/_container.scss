@@ -1,5 +1,5 @@
 .l-container {
-    padding: 3rem 2.2rem;
+    padding: 3rem 1.5rem;
     text-align: center;
     background-color: $c-primary;
 
@@ -8,10 +8,17 @@
         font-size: 2.5rem;
         font-weight: 400;
         margin-bottom: 1.2rem;
+        color: $c-secondary;
     }
 
     &__paragraph {
         line-height: 1.6rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2.5rem;
+        color: $c-secondary;
+    }
+
+    &--contact-bg {
+        background-image: url(../img/footer.png);
+        background-size: cover;
     }
 }

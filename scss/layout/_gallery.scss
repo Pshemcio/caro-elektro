@@ -5,8 +5,8 @@
     margin-bottom: 20px;
 
     &__figure {
-        width: calc(100%/2 - 2px);
-        padding-bottom: 4px;
+        width: calc(100%/2 - #{$p-gallery-items / 2});
+        padding-bottom: $p-gallery-items;
 
         img {
             width: 100%;

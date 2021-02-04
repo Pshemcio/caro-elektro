@@ -1,0 +1,9 @@
+.l-form {
+    padding: 0 20px 20px;
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+}

@@ -1,6 +1,6 @@
 //colors
 $c-primary: #f2f2f2;
-$c-secondary: rgb(10, 10, 10);
+$c-secondary: #4f4f4f;
 $c-secondaryLight: #7C7b7a;
 $c-tertiary: #276a9a;
 
@@ -10,10 +10,11 @@ $s-burger: 60px;
 $s-logo: 2rem;
 $s-stack-icon: 3.5rem;
 
+//paddings
+$p-gallery-items: 8px;
+
 //css variables
 :root {
-    font-size: 17px;
-
     --js-photos-quantity: 8;
 
     @include breakpoint(sm) {

@@ -8,8 +8,8 @@
 @import 'components/hero';
 @import 'components/burger';
 @import 'components/cards';
-@import 'components/split';
-@import 'components/gallery';
+@import 'components/input-group';
+@import 'components/custom-checkbox';
 // @import 'components/menu';
 // @import 'components/logo';
 
@@ -17,8 +17,10 @@
 @import 'layout/wrapper';
 @import 'layout/navigation';
 @import 'layout/footer';
-@import 'layout/forms';
 @import 'layout/stack';
+@import 'layout/gallery';
+@import 'layout/split';
+@import 'layout/forms';
 
 @import 'pages/home';
 @import 'pages/installations';

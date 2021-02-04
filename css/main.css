@@ -1,5 +1,12 @@
 :root {
   font-size: 17px;
+  --js-photos-quantity: 8;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --js-photos-quantity: 12;
+  }
 }
 
 * {
@@ -12,6 +19,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.js-hide {
+  display: none;
 }
 
 .splide {
@@ -45,16 +56,24 @@ html {
 }
 
 .c-button {
-  padding: 1rem 2.2rem;
+  padding: 1rem;
+  width: 11rem;
   color: #f2f2f2;
   border-radius: 6px;
   font-size: 1rem;
   text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .c-button--transparent {
   background-color: rgba(10, 10, 10, 0.2);
   border: 1px solid rgba(242, 242, 242, 0.6);
+}
+
+.c-button--main {
+  background-color: #276a9a;
+  border: 1px solid #276a9a;
 }
 
 .c-hero {
@@ -253,6 +272,8 @@ html {
 
 .l-split__heading {
   font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
 .l-split__paragraph {
@@ -286,6 +307,28 @@ html {
           transform: translateX(8px);
 }
 
+.my-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.my-gallery__figure {
+  width: calc(100%/2 - 2px);
+  padding-bottom: 4px;
+}
+
+.my-gallery__figure img {
+  width: 100%;
+  height: 100%;
+}
+
 .l-container {
   padding: 3rem 2.2rem;
   text-align: center;
@@ -294,7 +337,7 @@ html {
 
 .l-container__heading {
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
   margin-bottom: 1.2rem;
 }

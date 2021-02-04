@@ -1,12 +1,20 @@
 .c-button {
-    padding: $s-button (2.2 * $s-button);
+    padding: $s-button;
+    width: $s-button * 11;
     color: $c-primary;
     border-radius: 6px;
     font-size: $s-button;
     text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
 
     &--transparent {
         background-color: rgba($c-secondary, .2);
         border: 1px solid rgba($c-primary, .6);
+    }
+
+    &--main {
+        background-color: $c-tertiary;
+        border: 1px solid $c-tertiary;
     }
 }

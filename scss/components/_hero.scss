@@ -6,13 +6,13 @@
     &__heading {
         font-weight: 400;
         font-size: 2.4rem;
-        margin-bottom: $m-hero-children;
+        margin-bottom: 26px;
     }
 
     &__decoration {
         position: relative;
         width: 200px;
-        margin: 0 auto $m-hero-children;
+        margin: 0 auto 26px;
 
         &::before,
         &::after {

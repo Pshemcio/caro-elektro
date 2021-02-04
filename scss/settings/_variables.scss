@@ -10,10 +10,13 @@ $s-burger: 60px;
 $s-logo: 2rem;
 $s-stack-icon: 3.5rem;
 
-//margins
-$m-hero-children: 26px;
-
 //css variables
 :root {
     font-size: 17px;
+
+    --js-photos-quantity: 8;
+
+    @include breakpoint(sm) {
+        --js-photos-quantity: 12;
+    }
 }

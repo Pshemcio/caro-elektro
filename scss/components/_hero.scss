@@ -2,11 +2,17 @@
     color: $c-primary;
     text-align: center;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__heading {
         font-weight: 400;
         font-size: 2.4rem;
         margin-bottom: 26px;
+        text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+            0px 8px 13px rgba(0, 0, 0, 0.1),
+            0px 18px 23px rgba(0, 0, 0, 0.1);
     }
 
     &__decoration {

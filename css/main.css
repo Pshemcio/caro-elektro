@@ -54,7 +54,28 @@ html {
   }
 }
 
+#splide01-slide01 {
+  background-position-x: 20% !important;
+}
+
+@media (min-width: 1200px) {
+  #splide01-slide01 {
+    background-position-x: center !important;
+  }
+}
+
+#splide01-slide02 {
+  background-position-x: 60% !important;
+}
+
+@media (min-width: 1200px) {
+  #splide01-slide02 {
+    background-position-x: center !important;
+  }
+}
+
 .c-button {
+  display: block;
   padding: 1rem;
   width: 11rem;
   color: #f2f2f2;
@@ -98,12 +119,23 @@ html {
   color: #f2f2f2;
   text-align: center;
   text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .c-hero__heading {
   font-weight: 400;
   font-size: 2.4rem;
   margin-bottom: 26px;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 .c-hero__decoration {
@@ -253,6 +285,7 @@ html {
   border: 1px solid #276a9a;
   color: #276a9a;
   padding: 10px;
+  font-size: 16px;
   font-weight: 500;
   margin-bottom: 10px;
   width: 100%;
@@ -317,7 +350,7 @@ html {
 }
 
 .l-wrapper--dark {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #main-nav {
@@ -408,6 +441,16 @@ html {
 
 .c-logo__icon {
   width: 2rem;
+}
+
+.c-footer {
+  background-color: transparent;
+  text-align: center;
+  -webkit-transform: translateY(35px);
+          transform: translateY(35px);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  font-size: 12px;
 }
 
 .l-stack {

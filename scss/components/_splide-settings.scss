@@ -27,3 +27,19 @@
         }
     }
 }
+
+#splide01-slide01 {
+    background-position-x: 20% !important;
+
+    @include breakpoint(lg) {
+        background-position-x: center !important;
+    }
+}
+
+#splide01-slide02 {
+    background-position-x: 60% !important;
+
+    @include breakpoint(lg) {
+        background-position-x: center !important;
+    }
+}

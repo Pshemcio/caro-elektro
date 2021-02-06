@@ -1,5 +1,6 @@
 .c-button {
     $self: &;
+    display: block;
     padding: $s-button;
     width: $s-button * 11;
     color: $c-primary;

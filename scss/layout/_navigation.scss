@@ -71,6 +71,8 @@
         text-align: center;
         padding: 1.6rem 0;
         font-size: 1.35rem;
+        transition: color .4s;
+        outline: none;
 
         @include breakpoint(xs) {
             padding: .8rem 0;
@@ -84,6 +86,11 @@
         @include breakpoint(lg) {
             font-size: 1rem;
         }
+
+        &:hover,
+        &:focus {
+            color: $c-tertiaryLight;
+        }
     }
 }
 
@@ -91,6 +98,7 @@
     @include navLink;
     display: flex;
     justify-content: center;
+    outline: none;
 
     @include breakpoint(lg) {
         align-items: center;
@@ -105,6 +113,12 @@
         margin-left: 8px;
         font-size: $s-logo / 1.8;
         line-height: $s-logo;
+        transition: color .4s;
+
+        &:hover,
+        &:focus {
+            color: $c-tertiaryLight;
+        }
     }
 
     &__icon {

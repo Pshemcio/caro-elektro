@@ -91,11 +91,19 @@ html {
   margin-top: 10px;
   cursor: pointer;
   text-decoration: none;
+  -webkit-transition: background-color .4s, color .4s;
+  transition: background-color .4s, color .4s;
+  outline: none;
 }
 
 .c-button--transparent {
   background-color: rgba(79, 79, 79, 0.2);
   border: 1px solid rgba(242, 242, 242, 0.6);
+}
+
+.c-button--transparent:hover, .c-button--transparent:focus {
+  background-color: #f2f2f2;
+  color: #276a9a;
 }
 
 .c-button--main {
@@ -113,17 +121,26 @@ html {
   border: 1px solid #276a9a;
 }
 
+.c-button--main:hover, .c-button--main:focus, .c-button--small:hover, .c-button--small:focus {
+  background-color: #f2f2f2;
+  color: #276a9a;
+}
+
 .c-button--small {
   padding: 0.76923rem;
   width: 8rem;
 }
 
 .c-button--contact {
+  position: relative;
   text-decoration: none;
   padding: 0;
   color: #276a9a;
   font-size: .9rem;
   margin-top: 10px;
+  -webkit-transition: color .4s .4s;
+  transition: color .4s .4s;
+  outline: none;
 }
 
 @media (min-width: 992px) {
@@ -132,11 +149,40 @@ html {
   }
 }
 
+@media (min-width: 1200px) {
+  .c-button--contact {
+    width: 170px;
+  }
+  .c-button--contact:nth-of-type(2) {
+    width: 245px;
+  }
+  .c-button--contact:last-of-type {
+    width: 140px;
+  }
+  .c-button--contact:hover, .c-button--contact:focus {
+    color: rgba(39, 106, 154, 0.5);
+  }
+  .c-button--contact:hover .c-button__icon, .c-button--contact:focus .c-button__icon {
+    min-width: 100%;
+  }
+}
+
 .c-button__icon {
   padding: 10px;
+  min-width: 10px;
   border: 1px solid rgba(39, 106, 154, 0.4);
-  border-radius: 50%;
+  border-radius: 50px;
   margin-right: 5px;
+  -webkit-transition: min-width .5s .1s;
+  transition: min-width .5s .1s;
+}
+
+@media (min-width: 1200px) {
+  .c-button__text {
+    position: absolute;
+    top: 10px;
+    left: 41px;
+  }
 }
 
 .c-hero {
@@ -241,7 +287,11 @@ html {
   height: 60px;
   cursor: pointer;
   background-color: rgba(79, 79, 79, 0.2);
+  outline: none;
+  border: none;
   border-radius: 50%;
+  -webkit-transition: background-color .4s;
+  transition: background-color .4s;
 }
 
 @media (min-width: 512px) {
@@ -266,10 +316,18 @@ html {
   background-color: #f2f2f2;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: -webkit-transform .4s;
-  transition: -webkit-transform .4s;
-  transition: transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
+  -webkit-transition: background-color .4s, -webkit-transform .4s;
+  transition: background-color .4s, -webkit-transform .4s;
+  transition: transform .4s, background-color .4s;
+  transition: transform .4s, background-color .4s, -webkit-transform .4s;
+}
+
+.c-burger:hover {
+  background-color: transparent;
+}
+
+.c-burger:hover .c-burger__inner, .c-burger:hover::before, .c-burger:hover::after {
+  background-color: aqua;
 }
 
 .c-burger__inner {
@@ -308,9 +366,13 @@ html {
   height: 230px;
   margin-bottom: 55px;
   background-size: cover;
+  background-position: center center;
   border-radius: 5px;
   -webkit-box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
           box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
+  overflow: hidden;
+  -webkit-transition: background-size .4s;
+  transition: background-size .4s;
 }
 
 @media (min-width: 992px) {
@@ -332,6 +394,22 @@ html {
   }
 }
 
+@media (min-width: 992px) {
+  .c-card {
+    background-size: 100%;
+  }
+  .c-card:hover, .c-card:focus {
+    background-size: 110%;
+  }
+  .c-card:hover .c-card__inner, .c-card:focus .c-card__inner {
+    width: 0;
+  }
+  .c-card:hover .c-card__icon, .c-card:focus .c-card__icon {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+}
+
 .c-card--electrical {
   background-image: url(../img/offer-1.jpg);
 }
@@ -350,14 +428,27 @@ html {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  background-color: rgba(79, 79, 79, 0.25);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background-color: rgba(79, 79, 79, 0.75);
   border-radius: 10px 0 0 10px;
+  -webkit-transition: width .4s;
+  transition: width .4s;
+  overflow: hidden;
+}
+
+@supports ((-webkit-backdrop-filter: blur(7px)) or (backdrop-filter: blur(7px))) {
+  .c-card__inner {
+    background-color: rgba(79, 79, 79, 0.35);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+  }
 }
 
 .c-card__icon {
   width: 3.5rem;
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
 }
 
 .c-card__heading {
@@ -613,6 +704,9 @@ html {
   text-align: center;
   padding: 1.6rem 0;
   font-size: 1.35rem;
+  -webkit-transition: color .4s;
+  transition: color .4s;
+  outline: none;
 }
 
 @media (min-width: 512px) {
@@ -633,6 +727,10 @@ html {
   }
 }
 
+.c-menu__link:hover, .c-menu__link:focus {
+  color: aqua;
+}
+
 .c-logo {
   display: block;
   color: #f2f2f2;
@@ -643,6 +741,7 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  outline: none;
 }
 
 @media (min-width: 1200px) {
@@ -664,6 +763,12 @@ html {
   margin-left: 8px;
   font-size: 1.11111rem;
   line-height: 2rem;
+  -webkit-transition: color .4s;
+  transition: color .4s;
+}
+
+.c-logo__text:hover, .c-logo__text:focus {
+  color: aqua;
 }
 
 .c-logo__icon {
@@ -684,13 +789,30 @@ html {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding-top: 15px;
   margin: 30px auto 0;
-  width: 85vw;
+  width: 85%;
+}
+
+@media (min-width: 1200px) {
+  .c-footer {
+    width: 85vw;
+  }
 }
 
 .c-footer__text {
   text-decoration: none;
   font-size: 12px;
   color: #4f4f4f;
+}
+
+@media (min-width: 1200px) {
+  .c-footer__text {
+    padding: 10px 40px;
+    -webkit-transition: color .4s;
+    transition: color .4s;
+  }
+  .c-footer__text:hover {
+    color: #276a9a;
+  }
 }
 
 .l-stack {
@@ -769,7 +891,8 @@ html {
 
 .my-gallery__figure {
   width: calc(100%/2 - 4px);
-  padding-bottom: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
 }
 
 @media (min-width: 512px) {
@@ -781,7 +904,7 @@ html {
 @media (min-width: 992px) {
   .my-gallery__figure {
     width: calc(100%/4 - 8px);
-    padding-bottom: 16px;
+    margin-bottom: 16px;
   }
 }
 
@@ -789,6 +912,15 @@ html {
   border-radius: 5px;
   width: 100%;
   height: 100%;
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+}
+
+.my-gallery__figure:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .l-split {

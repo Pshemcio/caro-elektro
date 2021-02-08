@@ -8,7 +8,10 @@
     height: $s-burger;
     cursor: pointer;
     background-color: rgba($c-secondary, .2);
+    outline: none;
+    border: none;
     border-radius: 50%;
+    transition: background-color .4s;
 
     @include breakpoint(xs) {
         width: $s-burger * .8;
@@ -29,7 +32,17 @@
         height: 3px;
         background-color: $c-primary;
         transform: translate(-50%, -50%);
-        transition: transform .4s;
+        transition: transform .4s, background-color .4s;
+    }
+
+    &:hover {
+        background-color: transparent;
+
+        #{ $self }__inner,
+        &::before,
+        &::after {
+            background-color: aqua;
+        }
     }
 
     &__inner {

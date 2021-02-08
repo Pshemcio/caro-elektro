@@ -10,10 +10,18 @@
     margin-top: 10px;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color .4s, color .4s;
+    outline: none;
 
     &--transparent {
         background-color: rgba($c-secondary, .2);
         border: 1px solid rgba($c-primary, .6);
+
+        &:hover,
+        &:focus {
+            background-color: $c-primary;
+            color: $c-tertiary;
+        }
     }
 
     &--main {
@@ -28,6 +36,12 @@
     &--small {
         background-color: $c-tertiary;
         border: 1px solid $c-tertiary;
+
+        &:hover,
+        &:focus {
+            background-color: $c-primary;
+            color: $c-tertiary;
+        }
     }
 
     &--small {
@@ -36,21 +50,55 @@
     }
 
     &--contact {
+        position: relative;
         text-decoration: none;
         padding: 0;
         color: $c-tertiary;
         font-size: .9rem;
         margin-top: 10px;
+        transition: color .4s .4s;
+        outline: none;
 
         @include breakpoint(md) {
             margin-top: 0;
+        }
+
+        @include breakpoint(lg) {
+            width: 170px;
+
+            &:nth-of-type(2) {
+                width: 245px;
+            }
+
+            &:last-of-type {
+                width: 140px;
+            }
+
+            &:hover,
+            &:focus {
+                #{ $self }__icon {
+                    min-width: 100%;
+                }
+
+                color: rgba($c-tertiary, .5);
+            }
         }
     }
 
     &__icon {
         padding: 10px;
+        min-width: 10px;
         border: 1px solid rgba($c-tertiary, .4);
-        border-radius: 50%;
+        border-radius: 50px;
         margin-right: 5px;
+        transition: min-width .5s .1s;
+    }
+
+    &__text {
+        @include breakpoint(lg) {
+            position: absolute;
+            top: 10px;
+            left: 41px;
+        }
     }
 }

@@ -1,10 +1,14 @@
 .c-card {
+    $self: &;
     position: relative;
     height: 230px;
     margin-bottom: 55px;
     background-size: cover;
+    background-position: center center;
     border-radius: 5px;
     box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
+    overflow: hidden;
+    transition: background-size .4s;
 
     @include breakpoint(md) {
         flex-basis: 32%;
@@ -15,6 +19,24 @@
 
             @include breakpoint(lg) {
                 transform: translateY(40px);
+            }
+        }
+    }
+
+    @include breakpoint(md) {
+        background-size: 100%;
+
+        &:hover,
+        &:focus {
+            background-size: 110%;
+
+            #{ $self }__inner {
+                // transform: translateX(-100%);
+                width: 0;
+            }
+
+            #{ $self }__icon {
+                transform: translateX(100px);
             }
         }
     }
@@ -36,13 +58,23 @@
         width: 30%;
         display: grid;
         place-items: center;
-        background-color: rgba($c-secondary, .25);
-        backdrop-filter: blur(10px);
+        background-color: rgba($c-secondary, .75);
         border-radius: 10px 0 0 10px;
+        transition: width .4s;
+        overflow: hidden;
+    }
+
+    @supports ((-webkit-backdrop-filter: blur(7px)) or (backdrop-filter: blur(7px))) {
+        &__inner {
+            background-color: rgba($c-secondary, .35);
+            -webkit-backdrop-filter: blur(7px);
+            backdrop-filter: blur(7px);
+        }
     }
 
     &__icon {
         width: $s-stack-icon;
+        transition: transform .4s;
     }
 
     &__heading {

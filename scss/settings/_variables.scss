@@ -17,6 +17,10 @@ $p-gallery-items: 8px;
 :root {
     --js-photos-quantity: 8;
 
+    @include breakpoint(xs) {
+        --js-photos-quantity: 9;
+    }
+
     @include breakpoint(sm) {
         --js-photos-quantity: 12;
     }

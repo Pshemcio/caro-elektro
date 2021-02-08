@@ -10,6 +10,11 @@
     background-color: rgba($c-secondary, .2);
     border-radius: 50%;
 
+    @include breakpoint(xs) {
+        width: $s-burger * .8;
+        height: $s-burger * .8;
+    }
+
     &__inner,
     &::before,
     &::after {

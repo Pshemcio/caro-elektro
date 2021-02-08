@@ -13,6 +13,10 @@
 
     &__textarea {
         height: 20vh;
+
+        @include breakpoint(xs) {
+            height: 40vh;
+        }
     }
 
     &__file {

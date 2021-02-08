@@ -12,6 +12,10 @@
 
         &:nth-of-type(odd) {
             transform: translateY(20px);
+
+            @include breakpoint(lg) {
+                transform: translateY(40px);
+            }
         }
     }
 

@@ -1,9 +1,10 @@
 .c-footer {
     background-color: transparent;
     text-align: center;
-    transform: translateY(25px);
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     padding-top: 15px;
+    margin: 30px auto 0;
+    width: 85vw;
 
     &__text {
         text-decoration: none;

@@ -1,4 +1,5 @@
 .l-stack {
+    $self: &;
     display: flex;
     flex-direction: column;
 
@@ -10,9 +11,19 @@
     }
 
     &--contact {
-        flex-direction: row;
+        text-align: left;
         width: 70%;
-        margin: 0 auto;
-        justify-content: space-between;
+        margin-left: 20px;
+
+        @include breakpoint(md) {
+            width: 90%;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 auto 1.5rem;
+        }
+
+        @include breakpoint(lg) {
+            width: 75%;
+        }
     }
 }

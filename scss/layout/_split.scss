@@ -67,16 +67,28 @@
             flex-flow: column nowrap;
             justify-content: center;
         }
+
+        @include breakpoint(lg) {
+            padding: 2rem 6rem;
+        }
     }
 
     &__heading {
         font-weight: 500;
         font-size: 1.5rem;
         margin-bottom: 10px;
+
+        @include breakpoint(lg) {
+            font-size: 1.9rem;
+        }
     }
 
     &__paragraph {
         font-weight: 300;
+
+        @include breakpoint(lg) {
+            line-height: 1.5rem;
+        }
     }
 }
 

@@ -22,12 +22,22 @@
         @include breakpointPortrait(sm) {
             font-size: 3rem;
         }
+
+        @include breakpoint(lg) {
+            font-weight: 500;
+            font-size: 4.5rem;
+        }
     }
 
     &__decoration {
         position: relative;
         width: 200px;
         margin: 0 auto 26px;
+
+        @include breakpoint(lg) {
+            width: 300px;
+            font-size: 1.6rem;
+        }
 
         &::before,
         &::after {
@@ -38,6 +48,10 @@
             position: absolute;
             top: 50%;
             background-color: $c-primary;
+
+            @include breakpoint(lg) {
+                height: 2px;
+            }
         }
 
         &::before {
@@ -55,6 +69,10 @@
         @include breakpoint(sm) {
             display: block;
             padding: .5rem 7rem 1rem;
+        }
+
+        @include breakpoint(lg) {
+            padding: .5rem 20rem 2rem;
         }
     }
 }

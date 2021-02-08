@@ -15,6 +15,10 @@
         height: $s-burger * .8;
     }
 
+    @include breakpoint(lg) {
+        display: none;
+    }
+
     &__inner,
     &::before,
     &::after {

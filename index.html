@@ -273,65 +273,88 @@
         </div>
     </section>
     <section id="contact">
-        <div class="l-container l-container--contact-bg">
+        <div class="l-container l-container--contact">
             <h2 class="l-container__heading">kontakt</h2>
             <p class="l-container__paragraph">
                 Serdecznie zapraszamy do kontaktu przez formularz bądź telefonicznie!
             </p>
-            <form action="POST" class="l-form">
-                <div class="l-form__wrap">
-                    <div class="c-input-group">
-                        <input type="text" class="c-input-group__input" placeholder="Imię/firma">
-                        <small class="c-input-group__help"></small>
-                    </div>
-                    <div class="c-input-group">
-                        <input type="mail" class="c-input-group__input" placeholder="Email">
-                        <small class="c-input-group__help"></small>
-                    </div>
-                    <div class="c-input-group">
-                        <input type="tel" class="c-input-group__input" placeholder="Telefon">
-                        <small class="c-input-group__help"></small>
-                    </div>
+            <div class="l-container--swap">
+                <div class="l-form">
+                    <h3 class="l-form__heading">
+                        Masz pytanie?
+                    </h3>
+                    <p class="l-form__paragraph">
+                        Napisz je tutaj a my się z Tobą skontaktujemy.
+                    </p>
+                    <form action="POST" class="l-form__inner">
+                        <div class="l-form__wrap">
+                            <div class="c-input-group">
+                                <input type="text" class="c-input-group__input" placeholder="Imię/firma">
+                                <small class="c-input-group__help"></small>
+                            </div>
+                            <div class="c-input-group">
+                                <input type="mail" class="c-input-group__input" placeholder="Email">
+                                <small class="c-input-group__help"></small>
+                            </div>
+                            <div class="c-input-group">
+                                <input type="tel" class="c-input-group__input" placeholder="Telefon">
+                                <small class="c-input-group__help"></small>
+                            </div>
+                        </div>
+                        <div class="c-input-group">
+                            <textarea name="" id="" class="c-input-group__textarea" placeholder="Wiadomość"></textarea>
+                            <small class="c-input-group__help"></small>
+                        </div>
+                        <div class="l-form__wrap">
+                            <div class="c-custom-checkbox">
+                                <label for="agreement" class="c-custom-checkbox__label"><input type="checkbox"
+                                        name="agreement" id="agreement" class="c-custom-checkbox__input">Wyrażam zgodę
+                                    na
+                                    przetwarzanie moich
+                                    danych
+                                    osobowych.
+                                </label>
+                            </div>
+                            <div class="c-input-group">
+                                <input type="file" class="c-input-group__file">
+                                <small class="c-input-group__help"></small>
+                            </div>
+                        </div>
+                        <button type="submit" class="c-button c-button--small">Wyślij</button>
+                    </form>
                 </div>
-                <div class="c-input-group">
-                    <textarea name="" id="" class="c-input-group__textarea" placeholder="Wiadomość"></textarea>
-                    <small class="c-input-group__help"></small>
+                <div class="l-stack l-stack--contact">
+                    <a href="tel:+4888224125" class="c-button--contact">
+                        <i class="fas fa-phone-square c-button__icon"></i>
+                        <span class="c-button__text">
+                            +48884125168
+                        </span>
+                    </a>
+                    <a href="mailto:caroelektro.rafal@gmail.com" class="c-button--contact">
+                        <i class="fas fa-envelope c-button__icon"></i>
+                        <span class="c-button__text">
+                            caroelektro.rafal@gmail
+                        </span>
+                    </a>
+                    <a href="https://goo.gl/maps/gaLZfdwqQeXA9BBc6" target="_BLANK" class="c-button--contact">
+                        <i class="fas fa-map-marked-alt c-button__icon"></i>
+                        <span class="c-button__text">
+                            Jak dojechać?
+                        </span>
+                    </a>
+                    <a href="https://www.facebook.com/Raf.Ralph" target="_BLANK" class=" c-button--contact">
+                        <i class="fab fa-facebook-square c-button__icon"></i>
+                        <span class="c-button__text">
+                            Facebook
+                        </span>
+                    </a>
                 </div>
-                <div class="l-form__wrap">
-                    <div class="c-custom-checkbox">
-                        <label for="agreement" class="c-custom-checkbox__label"><input type="checkbox" name="agreement"
-                                id="agreement" class="c-custom-checkbox__input">Wyrażam zgodę na przetwarzanie moich
-                            danych
-                            osobowych.
-                        </label>
-                    </div>
-                    <div class="c-input-group">
-                        <input type="file" class="c-input-group__file">
-                        <small class="c-input-group__help"></small>
-                    </div>
-                </div>
-                <button type="submit" class="c-button c-button--small">Wyślij</button>
-            </form>
-            <div class="l-stack l-stack--contact">
-                <a href="tel:+4888224125" class="c-button c-button--contact">
-                    <i class="fas fa-phone-square c-button__icon"></i>
-                </a>
-                <a href="mailto:caroelektro.rafal@gmail.com" class="c-button c-button--contact">
-                    <i class="fas fa-envelope c-button__icon"></i>
-                </a>
-                <a href="https://goo.gl/maps/gaLZfdwqQeXA9BBc6" target="_BLANK" class="c-button c-button--contact">
-                    <i class="fas fa-map-marked-alt c-button__icon"></i>
-                </a>
-                <a href="https://www.facebook.com/Raf.Ralph" target="_BLANK" class="c-button c-button--contact">
-                    <i class="fab fa-facebook-square c-button__icon"></i>
-                </a>
             </div>
             <footer id="main-footer" class="c-footer">
                 <a href="https://github.com/Pshemcio" class="c-footer__text">PROJEKT, REALIZACJA: PRZEMYSŁAW MAJKA</a>
             </footer>
         </div>
     </section>
-
 
     <script src="https://kit.fontawesome.com/a330ae9e9c.js" crossorigin="anonymous"></script>
 

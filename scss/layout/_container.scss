@@ -24,10 +24,22 @@
         margin-bottom: 2.5rem;
         color: $c-secondary;
         font-size: 1rem;
+
+        @include breakpoint(lg) {
+            padding: 0 14vw;
+        }
     }
 
-    &--contact-bg {
+    &--contact {
         background-image: url(../img/footer.png);
         background-size: cover;
+        padding-bottom: 2vh;
+    }
+
+    &--swap {
+        @include breakpoint(md) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
 }

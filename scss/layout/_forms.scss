@@ -1,6 +1,36 @@
 .l-form {
     padding: 0 20px 20px;
 
+    @include breakpoint(lg) {
+        padding: 4vw 10vw;
+        margin: 0 10vw;
+        border: 1px solid rgba($c-secondary, .6);
+    }
+
+    &__inner {
+        margin-top: 20px;
+    }
+
+    &__heading,
+    &__paragraph {
+        display: none;
+
+        @include breakpoint(lg) {
+            display: block;
+        }
+    }
+
+    &__heading {
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+
+    &__paragraph {
+        font-weight: 300;
+        font-size: 1.1rem;
+    }
+
+
     &__wrap {
         display: flex;
         flex-direction: column;

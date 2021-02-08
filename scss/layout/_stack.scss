@@ -2,6 +2,13 @@
     display: flex;
     flex-direction: column;
 
+    &--horizontal {
+        @include breakpoint(md) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
     &--contact {
         flex-direction: row;
         width: 70%;

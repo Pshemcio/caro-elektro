@@ -1,4 +1,7 @@
 .c-input-group {
+    @include breakpoint(md) {
+        flex-basis: 32%;
+    }
 
     &__input,
     &__textarea {
@@ -21,9 +24,14 @@
         @include breakpoint(sm) {
             height: 20vh;
         }
+
+        @include breakpointPortrait(md) {
+            height: 15vh;
+        }
     }
 
     &__file {
         margin-bottom: 15px;
+        color: $c-tertiary;
     }
 }

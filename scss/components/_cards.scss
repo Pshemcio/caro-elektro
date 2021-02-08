@@ -1,13 +1,19 @@
 .c-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: 230px;
     margin-bottom: 55px;
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
+
+    @include breakpoint(md) {
+        flex-basis: 32%;
+        height: 18vw;
+
+        &:nth-of-type(odd) {
+            transform: translateY(20px);
+        }
+    }
 
     &--electrical {
         background-image: url(../img/offer-1.jpg);

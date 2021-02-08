@@ -7,6 +7,10 @@
         padding: 2rem 5rem;
     }
 
+    @include breakpoint(md) {
+        padding: 4rem 6rem;
+    }
+
     &__heading {
         text-transform: uppercase;
         font-size: 2.5rem;

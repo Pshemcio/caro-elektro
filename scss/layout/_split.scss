@@ -5,8 +5,18 @@
     color: $c-primary;
     text-align: center;
 
+    @include breakpoint(md) {
+        flex-direction: row;
+        text-align: left;
+    }
+
     &--reverse {
         background-color: $c-secondaryLight;
+
+        @include breakpoint(md) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
     }
 
     &__image,
@@ -14,6 +24,10 @@
         background-size: cover;
         background-position: center center;
         width: 100%;
+
+        @include breakpoint(md) {
+            flex-basis: 50%;
+        }
     }
 
     &__image {
@@ -21,6 +35,10 @@
 
         @include breakpoint(xs) {
             height: 70vh;
+        }
+
+        @include breakpoint(md) {
+            height: 60vh;
         }
 
         @include breakpointPortrait (sm) {
@@ -41,6 +59,13 @@
 
         @include breakpoint(xs) {
             padding: 2rem 5rem;
+        }
+
+        @include breakpoint(md) {
+            padding: 2rem 3rem;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
         }
     }
 
@@ -63,18 +88,41 @@
         flex-direction: column;
         padding: 1rem;
         font-weight: 500;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+            align-items: center;
+            padding: 1rem 0;
+
+            &--reverse {
+                flex-direction: row-reverse;
+            }
+        }
     }
 
     &__icon {
         font-size: 2rem;
         margin-bottom: 10px;
+
+        @include breakpoint(md) {
+            font-size: 1.3rem;
+            margin: 0;
+        }
     }
 
     &__text {
         font-size: 1rem;
+
+        @include breakpoint(md) {
+            margin: 0 15px;
+        }
     }
 }
 
 .fa-user-shield {
     transform: translateX(8px);
+
+    @include breakpoint(md) {
+        transform: translateX(2px);
+    }
 }

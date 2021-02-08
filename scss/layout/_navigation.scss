@@ -20,6 +20,11 @@
     transform: translateY(-100%);
     transition: transform .1s .3s, opacity .4s;
 
+    @include breakpointPortrait(sm) {
+        justify-content: flex-start;
+        padding-top: 20vh;
+    }
+
     &--active {
         opacity: 1;
         transform: translateY(0);
@@ -54,6 +59,11 @@
         @include breakpoint(xs) {
             padding: .8rem 0;
         }
+
+
+        @include breakpointPortrait(sm) {
+            padding: 2rem 0;
+        }
     }
 }
 
@@ -70,5 +80,9 @@
 
     &__icon {
         width: $s-logo;
+    }
+
+    @include breakpointPortrait(sm) {
+        padding-bottom: 20px;
     }
 }

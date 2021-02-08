@@ -17,6 +17,10 @@
         @include breakpoint(xs) {
             height: 40vh;
         }
+
+        @include breakpoint(sm) {
+            height: 20vh;
+        }
     }
 
     &__file {

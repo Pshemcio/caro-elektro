@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    populateGallery(myGallery, 26, `img/gallery-thumbnails/img-`, `img/gallery-main/img-`, '1366x1024');
+    populateGallery(myGallery, 27, `img/gallery-thumbnails/img-`, `img/gallery-main/img-`, '1366x1024');
     scrollToSection();
     initSplideSlider();
     initPhotoSwipeFromDOM('.my-gallery');

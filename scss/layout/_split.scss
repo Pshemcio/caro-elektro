@@ -23,6 +23,10 @@
             height: 70vh;
         }
 
+        @include breakpointPortrait (sm) {
+            height: 40vh;
+        }
+
         &--home {
             background-image: url(../img/about-us.jpg);
         }

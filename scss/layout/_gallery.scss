@@ -4,12 +4,25 @@
     justify-content: space-between;
     margin-bottom: 20px;
 
+
+
+    @include breakpoint(md) {
+        &::after {
+            content: "";
+            width: calc(100%/4 - #{$p-gallery-items / 2});
+        }
+    }
+
     &__figure {
         width: calc(100%/2 - #{$p-gallery-items / 2});
         padding-bottom: $p-gallery-items;
 
         @include breakpoint(xs) {
-            width: calc(100%/3 - #{$p-gallery-items / 3});
+            width: calc(100%/3 - #{$p-gallery-items / 2});
+        }
+
+        @include breakpoint(md) {
+            width: calc(100%/4 - #{$p-gallery-items / 2});
         }
 
         img {

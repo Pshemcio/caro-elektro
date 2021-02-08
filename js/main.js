@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    populateGallery(myGallery, 26, `img/gallery-thumbnails/img-`, `img/gallery-main/img-`, '1366x1024')
+    populateGallery(myGallery, 26, `img/gallery-thumbnails/img-`, `img/gallery-main/img-`, '1366x1024');
+    scrollToSection();
     initSplideSlider();
     initPhotoSwipeFromDOM('.my-gallery');
 
@@ -311,4 +312,25 @@ const handleBurgerMenu = () => {
     const menu = mainNav.querySelector('.l-main-nav');
 
     showBurgerMenu(menu, burgerBtn);
+};
+
+const supportsSmoothScrolling = () => {
+    const body = document.body;
+    const scrollSave = body.style.scrollBehavior;
+    body.style.scrollBehavior = 'smooth';
+    const hasSmooth = getComputedStyle(body).scrollBehavior === 'smooth';
+    body.style.scrollBehavior = scrollSave;
+    return hasSmooth;
+};
+
+const scrollToSection = () => {
+    if (supportsSmoothScrolling()) {
+        return;
+    }
+
+    new SmoothScroll('a[href*="#"]', {
+        // Speed & Duration
+        speed: 400, // Integer. Amount of time in milliseconds it should take to scroll 1000px
+        durationMin: 500, // Integer. The minimum amount of time the scroll animation should take
+    });
 };

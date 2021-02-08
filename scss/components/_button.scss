@@ -16,6 +16,10 @@
         border: 1px solid rgba($c-primary, .6);
     }
 
+    &--main {
+        margin: 10px auto 0;
+    }
+
     &--main,
     &--small {
         background-color: $c-tertiary;

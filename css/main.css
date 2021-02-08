@@ -92,6 +92,10 @@ html {
   border: 1px solid rgba(242, 242, 242, 0.6);
 }
 
+.c-button--main {
+  margin: 10px auto 0;
+}
+
 .c-button--main, .c-button--small {
   background-color: #276a9a;
   border: 1px solid #276a9a;

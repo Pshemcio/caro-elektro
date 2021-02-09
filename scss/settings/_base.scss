@@ -15,6 +15,7 @@ html {
     }
 
     &-width-hide {
+        transition: width 1s;
         width: 0;
         overflow: hidden;
     }
@@ -28,6 +29,7 @@ html {
     }
 
     &-opacity-show {
+        transition: opacity 1s;
         opacity: 1;
     }
 
@@ -65,6 +67,7 @@ html {
     &-transformUp-hide {
         transform: translateY(100%) !important;
         opacity: 0;
+        pointer-events: none;
     }
 
     &-transformUp-show {

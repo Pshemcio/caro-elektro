@@ -2,7 +2,7 @@
     $self: &;
     display: block;
     padding: $s-button;
-    width: $s-button * 11;
+    width: $s-button * 10;
     color: $c-primary;
     border-radius: 6px;
     font-size: $s-button;
@@ -14,7 +14,7 @@
     outline: none;
 
     &--transparent {
-        background-color: rgba($c-secondary, .2);
+        background-color: rgba($c-secondary, .5);
         border: 1px solid rgba($c-primary, .6);
 
         &:hover,

@@ -343,13 +343,42 @@ const scrollToSection = () => {
     });
 };
 
+const cssAnimation = (element, animation, delay, duration) => {
+    element.classList.add(`js-${animation}-hide`);
+
+    if (duration !== undefined) {
+        setTimeout(() => {
+            element.style.transition = `${animation} ${duration}s`;
+        }, delay / 10);
+    };
+
+    setTimeout(() => {
+        element.classList.add(`js-${animation}-show`);
+
+        setTimeout(() => {
+            element.classList.remove(`js-${animation}-hide`);
+        }, (duration * 1000));
+
+    }, delay);
+};
+
 const prepareDomElements = () => {
-    const offerStack = document.querySelector('#offer .l-stack').children;
+    const offerStack = document.querySelector('#offer .l-stack').children,
+        headerHeading = headerHero.querySelector('.c-hero__heading'),
+        headerDecoration = headerHero.querySelector('.c-hero__decoration'),
+        headerParagraph = headerHero.querySelector('.c-hero__paragraph'),
+        headerButton = headerHero.querySelector('.c-button--transparent');
 
     for (let i = 0; i < offerStack.length; i++) {
         const element = offerStack[i];
         element.classList.add('js-hide-card');
     };
+
+    cssAnimation(headerHeading, 'width', 500, 1);
+    cssAnimation(headerDecoration, 'opacity', 1000, .5);
+    cssAnimation(headerDecoration, 'decoration', 900);
+    cssAnimation(headerParagraph, 'transformDownTransformed', 1500);
+    cssAnimation(headerButton, 'transformUp', 1800);
 };
 
 const showCardItem = element => {

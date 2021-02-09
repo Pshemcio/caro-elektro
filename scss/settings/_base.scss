@@ -9,6 +9,67 @@ html {
     scroll-behavior: smooth;
 }
 
-.js-hide {
-    display: none;
+.js {
+    &-hide {
+        display: none;
+    }
+
+    &-width-hide {
+        width: 0;
+        overflow: hidden;
+    }
+
+    &-width-show {
+        width: 100%;
+    }
+
+    &-opacity-hide {
+        opacity: 0;
+    }
+
+    &-opacity-show {
+        opacity: 1;
+    }
+
+    &-decoration-hide {
+        &::after {
+            right: -40px !important;
+        }
+
+        &::before {
+            left: -40px !important;
+        }
+    }
+
+    &-decoration-show {
+        &::after {
+            right: 0 !important;
+        }
+
+        &::before {
+            left: 0 !important;
+        }
+    }
+
+    &-transformDownTransformed-hide {
+        transform: translate(-50%, -100%) !important;
+        opacity: 0;
+    }
+
+    &-transformDownTransformed-show {
+        transition: opacity .8s, transform .5s;
+        transform: translate(-50%, 0) !important;
+        opacity: 1;
+    }
+
+    &-transformUp-hide {
+        transform: translateY(100%) !important;
+        opacity: 0;
+    }
+
+    &-transformUp-show {
+        transition: opacity .9s, transform .5s !important;
+        transform: translateY(0) !important;
+        opacity: 1;
+    }
 }

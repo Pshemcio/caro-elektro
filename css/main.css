@@ -365,14 +365,19 @@ html {
   position: relative;
   height: 230px;
   margin-bottom: 55px;
-  background-size: cover;
+  background-size: 100%;
   background-position: center center;
   border-radius: 5px;
   -webkit-box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
           box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
-  overflow: hidden;
   -webkit-transition: background-size .4s;
   transition: background-size .4s;
+}
+
+@media (min-width: 768px) {
+  .c-card {
+    height: 40vw;
+  }
 }
 
 @media (min-width: 992px) {
@@ -394,20 +399,21 @@ html {
   }
 }
 
-@media (min-width: 992px) {
-  .c-card {
-    background-size: 100%;
-  }
-  .c-card:hover, .c-card:focus {
-    background-size: 110%;
-  }
-  .c-card:hover .c-card__inner, .c-card:focus .c-card__inner {
-    width: 0;
-  }
-  .c-card:hover .c-card__icon, .c-card:focus .c-card__icon {
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
-  }
+.c-card:hover, .c-card:focus, .c-card.js-hide-card {
+  background-size: 110%;
+}
+
+.c-card:hover .c-card__inner, .c-card:focus .c-card__inner, .c-card.js-hide-card .c-card__inner {
+  width: 0;
+}
+
+.c-card:hover .c-card__icon, .c-card:focus .c-card__icon, .c-card.js-hide-card .c-card__icon {
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+}
+
+.c-card:hover .c-card__heading, .c-card:focus .c-card__heading, .c-card.js-hide-card .c-card__heading {
+  top: 102%;
 }
 
 .c-card--electrical {
@@ -458,6 +464,8 @@ html {
   width: 100%;
   font-weight: 400;
   color: #4f4f4f;
+  -webkit-transition: top .4s;
+  transition: top .4s;
 }
 
 @media (min-width: 992px) {

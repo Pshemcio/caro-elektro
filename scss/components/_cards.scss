@@ -3,12 +3,15 @@
     position: relative;
     height: 230px;
     margin-bottom: 55px;
-    background-size: cover;
+    background-size: 100%;
     background-position: center center;
     border-radius: 5px;
     box-shadow: 6px -1px 12px -5px rgba(30, 30, 30, 0.5);
-    overflow: hidden;
     transition: background-size .4s;
+
+    @include breakpoint(sm) {
+        height: 40vw;
+    }
 
     @include breakpoint(md) {
         flex-basis: 32%;
@@ -23,21 +26,21 @@
         }
     }
 
-    @include breakpoint(md) {
-        background-size: 100%;
+    &:hover,
+    &:focus,
+    &.js-hide-card {
+        background-size: 110%;
 
-        &:hover,
-        &:focus {
-            background-size: 110%;
+        #{ $self }__inner {
+            width: 0;
+        }
 
-            #{ $self }__inner {
-                // transform: translateX(-100%);
-                width: 0;
-            }
+        #{ $self }__icon {
+            transform: translateX(100px);
+        }
 
-            #{ $self }__icon {
-                transform: translateX(100px);
-            }
+        #{ $self }__heading {
+            top: 102%;
         }
     }
 
@@ -84,5 +87,6 @@
         width: 100%;
         font-weight: 400;
         color: $c-secondary;
+        transition: top .4s;
     }
 }

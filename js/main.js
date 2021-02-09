@@ -3,25 +3,40 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollToSection();
     initSplideSlider();
     initPhotoSwipeFromDOM('.my-gallery');
+    prepareDomElements();
 
     mainNav.addEventListener('click', handleBurgerMenu);
     showMoreBtn.addEventListener('click', handleShowMoreBtnClick);
+
+    window.addEventListener('scroll', handleScrollEvents);
 });
 
-const mainNav = document.getElementById('main-nav');
-const myGallery = document.querySelector('.my-gallery');
-const showMoreBtn = document.querySelector('.js-show-more');
-const photosShown = Math.floor(getComputedStyle(document.documentElement)
-    .getPropertyValue('--js-photos-quantity'));
+const mainNav = document.getElementById('main-nav'),
+    myGallery = document.querySelector('.my-gallery'),
+    showMoreBtn = document.querySelector('.js-show-more'),
+    headerHero = document.querySelector('#main-header .c-hero'),
+    height = window.innerHeight || document.documentElement.clientHeight ||
+        document.body.clientHeight,
+    photosShown = Math.floor(getComputedStyle(document.documentElement)
+        .getPropertyValue('--js-photos-quantity'));
 
-const handleShowMoreBtnClick = (e) => {
-    if (e.target.innerText === 'POKAŻ WIĘCEJ') {
-        itemsDisplay(myGallery, true);
-        e.target.innerText = 'SCHOWAJ';
-    } else {
-        itemsDisplay(myGallery, false);
-        e.target.innerText = 'POKAŻ WIĘCEJ';
-    };
+const initSplideSlider = () => {
+    new Splide('.header-splide', {
+        type: 'fade',
+        rewind: true,
+        autoplay: true,
+        interval: 8000,
+        speed: 500,
+        pauseOnHover: false,
+        cover: true,
+        drag: false,
+        pagination: false,
+        width: '100%',
+        height: '100vh',
+        classes: {
+            arrow: 'splide__arrow header-btns',
+        },
+    }).mount();
 };
 
 const itemsDisplay = (itemsContainer, action) => {
@@ -67,6 +82,16 @@ const populateGallery = (gallerySelector, imgQuantity, thumbnailSrc, largeImgSrc
     };
 
     itemsDisplay(myGallery, false);
+};
+
+const handleShowMoreBtnClick = (e) => {
+    if (e.target.innerText === 'POKAŻ WIĘCEJ') {
+        itemsDisplay(myGallery, true);
+        e.target.innerText = 'SCHOWAJ';
+    } else {
+        itemsDisplay(myGallery, false);
+        e.target.innerText = 'POKAŻ WIĘCEJ';
+    };
 };
 
 var initPhotoSwipeFromDOM = function (gallerySelector) {
@@ -274,25 +299,6 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 
 //!!!!!!!!!!!!!!!!!!!!
 
-const initSplideSlider = () => {
-    new Splide('.header-splide', {
-        type: 'fade',
-        rewind: true,
-        autoplay: true,
-        interval: 8000,
-        speed: 500,
-        pauseOnHover: false,
-        cover: true,
-        drag: false,
-        pagination: false,
-        width: '100%',
-        height: '100vh',
-        classes: {
-            arrow: 'splide__arrow header-btns',
-        },
-    }).mount();
-};
-
 const showBurgerMenu = (menu, btn) => {
     const items = [menu, btn];
 
@@ -334,3 +340,44 @@ const scrollToSection = () => {
         durationMin: 500, // Integer. The minimum amount of time the scroll animation should take
     });
 };
+
+const prepareDomElements = () => {
+    const offerStack = document.querySelector('#offer .l-stack').children;
+
+    for (let i = 0; i < offerStack.length; i++) {
+        const element = offerStack[i];
+        element.classList.add('js-hide-card');
+    }
+};
+
+const showCardItem = (element) => {
+    if (window.scrollY < element.getBoundingClientRect().top) {
+        return;
+    };
+
+    if (window.scrollY > element.getBoundingClientRect().top + (window.pageYOffset / 1.4)) {
+        element.classList.remove('js-hide-card');
+    };
+}
+
+const verticalParallax = (element, speed) => {
+    if (window.scrollY > element.getBoundingClientRect().top + height) {
+        console.log('stop');
+        return;
+    };
+
+    element.style.transform = `translateY(${(window.scrollY) / speed}px)`;
+};
+
+const handleScrollEvents = () => {
+    const splideList = document.querySelector('.splide__list');
+    const offerStack = document.querySelector('#offer .l-stack').children;
+    for (let i = 0; i < offerStack.length; i++) {
+        const element = offerStack[i];
+        showCardItem(element);
+    };
+
+    verticalParallax(headerHero, 4);
+    verticalParallax(splideList, 2);
+};
+

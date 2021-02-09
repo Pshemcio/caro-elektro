@@ -177,6 +177,10 @@ html {
   transition: min-width .5s .1s;
 }
 
+.c-button__text {
+  font-size: .95rem;
+}
+
 @media (min-width: 1200px) {
   .c-button__text {
     position: absolute;
@@ -767,16 +771,16 @@ html {
   }
 }
 
+.c-logo:hover, .c-logo:focus {
+  color: aqua;
+}
+
 .c-logo__text {
   margin-left: 8px;
   font-size: 1.11111rem;
   line-height: 2rem;
   -webkit-transition: color .4s;
   transition: color .4s;
-}
-
-.c-logo__text:hover, .c-logo__text:focus {
-  color: aqua;
 }
 
 .c-logo__icon {
@@ -847,8 +851,6 @@ html {
 
 .l-stack--contact {
   text-align: left;
-  width: 70%;
-  margin-left: 20px;
 }
 
 @media (min-width: 992px) {
@@ -1012,7 +1014,7 @@ html {
 }
 
 .l-split__content {
-  padding: 3rem 2rem;
+  padding: 3rem 1.5rem;
 }
 
 @media (min-width: 512px) {
@@ -1135,7 +1137,7 @@ html {
 }
 
 .l-form {
-  padding: 0 20px 20px;
+  padding-bottom: 20px;
 }
 
 @media (min-width: 1200px) {

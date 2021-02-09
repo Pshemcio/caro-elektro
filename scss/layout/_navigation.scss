@@ -109,16 +109,16 @@
         padding-bottom: 20px;
     }
 
+    &:hover,
+    &:focus {
+        color: $c-tertiaryLight;
+    }
+
     &__text {
         margin-left: 8px;
         font-size: $s-logo / 1.8;
         line-height: $s-logo;
         transition: color .4s;
-
-        &:hover,
-        &:focus {
-            color: $c-tertiaryLight;
-        }
     }
 
     &__icon {

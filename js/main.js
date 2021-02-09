@@ -17,6 +17,8 @@ const mainNav = document.getElementById('main-nav'),
     headerHero = document.querySelector('#main-header .c-hero'),
     height = window.innerHeight || document.documentElement.clientHeight ||
         document.body.clientHeight,
+    width = window.innerWidth || document.documentElement.clientWidth ||
+        document.body.clientWidth,
     photosShown = Math.floor(getComputedStyle(document.documentElement)
         .getPropertyValue('--js-photos-quantity'));
 
@@ -347,37 +349,45 @@ const prepareDomElements = () => {
     for (let i = 0; i < offerStack.length; i++) {
         const element = offerStack[i];
         element.classList.add('js-hide-card');
-    }
+    };
 };
 
-const showCardItem = (element) => {
-    if (window.scrollY < element.getBoundingClientRect().top) {
+const showCardItem = element => {
+    if (window.pageYOffset < element.getBoundingClientRect().top) {
         return;
     };
 
-    if (window.scrollY > element.getBoundingClientRect().top + (window.pageYOffset / 1.4)) {
+    if (window.pageYOffset > element.getBoundingClientRect().top + (window.pageYOffset / 1.4)) {
         element.classList.remove('js-hide-card');
     };
 }
 
-const verticalParallax = (element, speed) => {
-    if (window.scrollY > element.getBoundingClientRect().top + height) {
-        console.log('stop');
+const parallaxEffect = (element, speed, delay) => {
+    if (-200 > element.parentElement.getBoundingClientRect().bottom
+        || 20 < element.parentElement.getBoundingClientRect().top - height + delay) {
         return;
     };
 
-    element.style.transform = `translateY(${(window.scrollY) / speed}px)`;
+    let offsetTop = element.parentElement.offsetTop - height > 0 ? element.parentElement.offsetTop - height + delay : 0;
+
+    element.style.transform = `translateY(${(window.pageYOffset - offsetTop) / speed}px)`;
 };
 
 const handleScrollEvents = () => {
     const splideList = document.querySelector('.splide__list');
     const offerStack = document.querySelector('#offer .l-stack').children;
+
+    const splitDelay = height;
+    let test = 1200 < width ? 5 : 20;;
+
+
     for (let i = 0; i < offerStack.length; i++) {
         const element = offerStack[i];
         showCardItem(element);
     };
 
-    verticalParallax(headerHero, 4);
-    verticalParallax(splideList, 2);
+    parallaxEffect(document.querySelector('.l-split__content'), test, splitDelay);
+    parallaxEffect(document.querySelector('.l-split--reverse .l-split__content'), test, splitDelay);
+    parallaxEffect(headerHero, 5, splitDelay);
+    parallaxEffect(splideList, 2, 0);
 };
-

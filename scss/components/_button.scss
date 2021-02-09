@@ -95,6 +95,8 @@
     }
 
     &__text {
+        font-size: .95rem;
+
         @include breakpoint(lg) {
             position: absolute;
             top: 10px;

@@ -55,7 +55,7 @@
     }
 
     &__content {
-        padding: 3rem 2rem;
+        padding: 3rem 1.5rem;
 
         @include breakpoint(xs) {
             padding: 2rem 5rem;

@@ -75,4 +75,12 @@ html {
         transform: translateY(0) !important;
         opacity: 1;
     }
+
+    &-error-msg {
+        position: absolute;
+        bottom: -22px;
+        left: 0;
+        color: tomato;
+        font-size: 14px;
+    }
 }

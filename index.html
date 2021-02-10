@@ -217,25 +217,17 @@
             Pokaż więcej
         </button>
 
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-            <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
             <div class="pswp__bg"></div>
 
             <div class="pswp__scroll-wrap">
-
-                <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
                 <div class="pswp__container">
                     <div class="pswp__item"></div>
                     <div class="pswp__item"></div>
                     <div class="pswp__item"></div>
                 </div>
 
-                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
                 <div class="pswp__ui pswp__ui--hidden">
 
                     <div class="pswp__top-bar">
@@ -243,8 +235,6 @@
                         <div class="pswp__counter"></div>
 
                         <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                        <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
 
                         <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 
@@ -293,20 +283,24 @@
                     <form action="POST" class="l-form__inner">
                         <div class="l-form__wrap">
                             <div class="c-input-group">
-                                <input type="text" class="c-input-group__input" placeholder="Imię/firma">
+                                <input type="text" name="name" id="name" class="c-input-group__input"
+                                    placeholder="Imię/firma">
                                 <small class="c-input-group__help"></small>
                             </div>
                             <div class="c-input-group">
-                                <input type="mail" class="c-input-group__input" placeholder="Email">
+                                <input type="email" name="email" id="email" class="c-input-group__input"
+                                    placeholder="Email">
                                 <small class="c-input-group__help"></small>
                             </div>
                             <div class="c-input-group">
-                                <input type="tel" class="c-input-group__input" placeholder="Telefon">
+                                <input type="tel" name="phone" id="phone" class="c-input-group__input"
+                                    placeholder="Telefon">
                                 <small class="c-input-group__help"></small>
                             </div>
                         </div>
                         <div class="c-input-group">
-                            <textarea name="" id="" class="c-input-group__textarea" placeholder="Wiadomość"></textarea>
+                            <textarea name="message" id="message" class="c-input-group__textarea"
+                                placeholder="Wiadomość"></textarea>
                             <small class="c-input-group__help"></small>
                         </div>
                         <div class="l-form__wrap">
@@ -320,11 +314,12 @@
                                 </label>
                             </div>
                             <div class="c-input-group">
-                                <input type="file" class="c-input-group__file">
+                                <input type="file" name="photo" id="photo" class="c-input-group__file">
                                 <small class="c-input-group__help"></small>
                             </div>
                         </div>
                         <button type="submit" class="c-button c-button--small">Wyślij</button>
+                        <span class="js-error-msg"></span>
                     </form>
                 </div>
                 <div class="l-stack l-stack--contact">

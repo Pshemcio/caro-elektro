@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mainNav.addEventListener('click', handleBurgerMenu);
     showMoreBtn.addEventListener('click', handleShowMoreBtnClick);
+    mainForm.addEventListener('submit', formValidation);
 
     window.addEventListener('scroll', handleScrollEvents);
 });
@@ -15,6 +16,8 @@ const mainNav = document.getElementById('main-nav'),
     myGallery = document.querySelector('.my-gallery'),
     showMoreBtn = document.querySelector('.js-show-more'),
     headerHero = document.querySelector('#main-header .c-hero'),
+    mainForm = document.querySelector('.l-form__inner'),
+    errorMsg = document.querySelector('.js-error-msg'),
     height = window.innerHeight || document.documentElement.clientHeight ||
         document.body.clientHeight,
     width = window.innerWidth || document.documentElement.clientWidth ||
@@ -414,4 +417,106 @@ const handleScrollEvents = () => {
     parallaxEffect(document.querySelector('.l-split--reverse .l-split__content'), test, splitDelay);
     parallaxEffect(headerHero, 5, splitDelay);
     parallaxEffect(splideList, 2, 0);
+};
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+let testArr = [];
+
+const checkLength = (input, min, max) => {
+    if (input.value.length < min) {
+        displayError(input, 'min')
+    } else if (input.value.length >= max) {
+        displayError(input, 'max')
+    } else {
+        testArr.pop();
+    };
+};
+
+const checkTextField = (input, min, max) => {
+    const re = /^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ0-9_-\s]{0,}$/;
+    testArr.push(false)
+
+    if (re.test(String(input.value).trim())) {
+        checkLength(input, min, max);
+    } else {
+        displayError(input, 'text');
+    };
+};
+
+const checkEmail = (input, min, max) => {
+    const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    testArr.push(false)
+
+    if (re.test(String(input.value).trim())) {
+        checkLength(input, min, max);
+    }
+    else {
+        displayError(input, 'email');
+    };
+};
+
+const checkPhoneNumber = (input, min, max) => {
+    const re = /^[0-9-()]{0,}$/;
+    testArr.push(false)
+
+    if (re.test(String(input.value).trim())) {
+        checkLength(input, min, max);
+    } else {
+        displayError(input, 'phone');
+    };
+};
+
+const displayError = (input, info) => {
+    let test = '';
+
+    switch (info) {
+        case 'min':
+            test = 'Za krótki.'
+            break;
+        case 'max':
+            test = 'Za długi.'
+            break;
+        case 'email':
+            test = 'Adres email nieprawidłowy.'
+            break;
+        case 'phone':
+            test = 'Telefon nieprawidłowy.'
+            break;
+        case 'text':
+            test = 'Wpisałeś niedozwolone znaki.'
+            break;
+        default:
+            break;
+    }
+    errorMsg.textContent = test;
+};
+
+const checkInputs = () => {
+    if (testArr.length === 0) {
+        console.log('wysyłam');
+        errorMsg.textContent = '';
+    } else {
+        console.log('błąd');
+    };
+
+    console.log(testArr);
+    testArr = [];
+};
+
+const formValidation = (e) => {
+    e.preventDefault();
+
+    const inputName = document.getElementById('name'),
+        inputEmail = document.getElementById('email'),
+        inputPhone = document.getElementById('phone'),
+        inputMessage = document.getElementById('message'),
+        inputAgreement = document.getElementById('agreement'),
+        inputPhoto = document.getElementById('photo');
+
+    checkTextField(inputName, 3, 40);
+    checkEmail(inputEmail, 3, 40);
+    checkPhoneNumber(inputPhone, 4, 20);
+    checkTextField(inputMessage, 0, 500);
+    checkInputs();
 };

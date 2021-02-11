@@ -1,4 +1,6 @@
 .c-input-group {
+    position: relative;
+
     @include breakpoint(md) {
         flex-basis: 32%;
     }
@@ -10,7 +12,7 @@
         padding: 10px;
         font-size: 16px;
         font-weight: 500;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         width: 100%;
     }
 
@@ -31,7 +33,14 @@
     }
 
     &__file {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         color: $c-tertiary;
+    }
+
+    &__help {
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        color: $c-tertiaryLight;
     }
 }

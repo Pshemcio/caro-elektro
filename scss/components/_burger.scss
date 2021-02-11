@@ -41,7 +41,7 @@
         #{ $self }__inner,
         &::before,
         &::after {
-            background-color: aqua;
+            background-color: $c-tertiaryLight;
         }
     }
 

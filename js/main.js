@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
     populateGallery(myGallery, 27, `img/gallery-thumbnails/img-`, `img/gallery-main/img-`, '1366x1024');
     scrollToSection();
@@ -17,7 +19,6 @@ const mainNav = document.getElementById('main-nav'),
     showMoreBtn = document.querySelector('.js-show-more'),
     headerHero = document.querySelector('#main-header .c-hero'),
     mainForm = document.querySelector('.l-form__inner'),
-    errorMsg = document.querySelector('.js-error-msg'),
     height = window.innerHeight || document.documentElement.clientHeight ||
         document.body.clientHeight,
     width = window.innerWidth || document.documentElement.clientWidth ||
@@ -424,89 +425,128 @@ const handleScrollEvents = () => {
 let testArr = [];
 
 const checkLength = (input, min, max) => {
-    if (input.value.length < min) {
-        displayError(input, 'min')
+    console.log(input.tagName)
+    if (input.value.length === 0 && min > 0) {
+        displayError(input, 'required', min, max)
+    } else if (input.value.length < min) {
+        displayError(input, 'min', min, max)
     } else if (input.value.length >= max) {
-        displayError(input, 'max')
+        displayError(input, 'max', min, max)
     } else {
-        testArr.pop();
+        removeError(input);
     };
 };
 
 const checkTextField = (input, min, max) => {
-    const re = /^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ0-9_-\s]{0,}$/;
-    testArr.push(false)
+    const re = /^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ0-9.,'"!?()/*_-\s]{0,}$/;
 
     if (re.test(String(input.value).trim())) {
         checkLength(input, min, max);
     } else {
-        displayError(input, 'text');
+        displayError(input, 'text', min, max);
     };
 };
 
 const checkEmail = (input, min, max) => {
     const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    testArr.push(false)
+
+    if (input.value.length === 0) {
+        displayError(input, 'required', min, max);
+        return;
+    };
 
     if (re.test(String(input.value).trim())) {
         checkLength(input, min, max);
     }
     else {
-        displayError(input, 'email');
+        displayError(input, 'email', min, max);
     };
 };
 
 const checkPhoneNumber = (input, min, max) => {
-    const re = /^[0-9-()]{0,}$/;
-    testArr.push(false)
+    const re = /^[0-9-+()\s]{0,}$/;
 
     if (re.test(String(input.value).trim())) {
         checkLength(input, min, max);
     } else {
-        displayError(input, 'phone');
+        displayError(input, 'phone', min, max);
     };
 };
 
-const displayError = (input, info) => {
-    let test = '';
+const checkAgreement = (input) => {
+    input.checked ? removeError(input)
+        : displayError(input, 'agreement');
+};
 
+const checkFile = (input) => {
+    if (input.value.length === 0) {
+        return;
+    };
+
+    let fileName = input.value,
+        idxDot = fileName.lastIndexOf(".") + 1,
+        extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (["jpg", "jpeg", "png"].includes(extFile)) {
+        removeError(input);
+    } else {
+        displayError(input, 'file');
+    };
+};
+
+const removeError = input => {
+    input.classList.remove('js-error-outline');
+    input.parentElement.querySelector('small').textContent = '';
+};
+
+const displayError = (input, info, min, max) => {
+    let mainText = '';
+    testArr.push(false);
     switch (info) {
+        case 'required':
+            mainText = `To pole jest wymagane.`;
+            break;
         case 'min':
-            test = 'Za krótki.'
+            mainText = `Minimalna ilość znaków: ${min}.`;
             break;
         case 'max':
-            test = 'Za długi.'
+            mainText = `Maksymalna ilość znaków: ${max}.`;
             break;
         case 'email':
-            test = 'Adres email nieprawidłowy.'
+            mainText = 'Adres email nieprawidłowy.';
             break;
         case 'phone':
-            test = 'Telefon nieprawidłowy.'
+            mainText = 'Telefon nieprawidłowy.';
             break;
         case 'text':
-            test = 'Wpisałeś niedozwolone znaki.'
+            mainText = 'Wpisałeś niedozwolone znaki.';
+            break;
+        case 'agreement':
+            mainText = 'Musisz zaznaczyć zgodę.';
+            break;
+        case 'file':
+            mainText = 'Dozwolony format pliku: jpg/jpeg/png';
             break;
         default:
+            mainText = '';
             break;
     }
-    errorMsg.textContent = test;
+
+    input.classList.add('js-error-outline');
+    input.parentElement.querySelector('small').textContent = mainText;
 };
 
-const checkInputs = () => {
+const checkInputs = e => {
     if (testArr.length === 0) {
+        e.preventDefault();
         console.log('wysyłam');
-        errorMsg.textContent = '';
     } else {
+        e.preventDefault();
         console.log('błąd');
     };
-
-    console.log(testArr);
     testArr = [];
 };
 
 const formValidation = (e) => {
-    e.preventDefault();
-
     const inputName = document.getElementById('name'),
         inputEmail = document.getElementById('email'),
         inputPhone = document.getElementById('phone'),
@@ -516,7 +556,9 @@ const formValidation = (e) => {
 
     checkTextField(inputName, 3, 40);
     checkEmail(inputEmail, 3, 40);
-    checkPhoneNumber(inputPhone, 4, 20);
-    checkTextField(inputMessage, 0, 500);
-    checkInputs();
+    checkPhoneNumber(inputPhone, 6, 20);
+    checkTextField(inputMessage, 0, 1000);
+    checkAgreement(inputAgreement);
+    checkFile(inputPhoto);
+    checkInputs(e);
 };

@@ -100,12 +100,8 @@ html {
   opacity: 1;
 }
 
-.js-error-msg {
-  position: absolute;
-  bottom: -22px;
-  left: 0;
-  color: tomato;
-  font-size: 14px;
+.js-error-outline {
+  outline: 2px solid #00ccff;
 }
 
 .splide {
@@ -421,7 +417,7 @@ html {
 }
 
 .c-burger:hover .c-burger__inner, .c-burger:hover::before, .c-burger:hover::after {
-  background-color: aqua;
+  background-color: #00ccff;
 }
 
 .c-burger__inner {
@@ -562,6 +558,10 @@ html {
   transition: top .4s;
 }
 
+.c-input-group {
+  position: relative;
+}
+
 @media (min-width: 992px) {
   .c-input-group {
     -ms-flex-preferred-size: 32%;
@@ -575,7 +575,7 @@ html {
   padding: 10px;
   font-size: 16px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -602,11 +602,19 @@ html {
 }
 
 .c-input-group__file {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #276a9a;
 }
 
+.c-input-group__help {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  color: #00ccff;
+}
+
 .c-custom-checkbox {
+  position: relative;
   margin-bottom: 15px;
 }
 
@@ -616,6 +624,13 @@ html {
 
 .c-custom-checkbox__label {
   font-size: 1rem;
+}
+
+.c-custom-checkbox__help {
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  color: #00ccff;
 }
 
 .l-container {
@@ -830,7 +845,7 @@ html {
 }
 
 .c-menu__link:hover, .c-menu__link:focus {
-  color: aqua;
+  color: #00ccff;
 }
 
 .c-logo {
@@ -862,7 +877,7 @@ html {
 }
 
 .c-logo:hover, .c-logo:focus {
-  color: aqua;
+  color: #00ccff;
 }
 
 .c-logo__text {

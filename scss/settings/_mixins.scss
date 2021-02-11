@@ -3,3 +3,18 @@
     color: $c-primary;
     text-decoration: none;
 }
+
+@mixin inputHelpText {
+    position: absolute;
+    left: 0;
+    bottom: -14px;
+    color: $c-tertiaryLight;
+    width: 0;
+    transition: width 1.2s;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &.js-error-slide {
+        width: 100%;
+    }
+}

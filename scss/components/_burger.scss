@@ -7,7 +7,7 @@
     width: $s-burger;
     height: $s-burger;
     cursor: pointer;
-    background-color: rgba($c-secondary, .2);
+    background-color: transparent;
     outline: none;
     border: none;
     border-radius: 50%;
@@ -30,19 +30,9 @@
         left: 50%;
         width: 55%;
         height: 3px;
-        background-color: $c-primary;
+        background-color: $c-tertiaryLight;
         transform: translate(-50%, -50%);
         transition: transform .4s, background-color .4s;
-    }
-
-    &:hover {
-        background-color: transparent;
-
-        #{ $self }__inner,
-        &::before,
-        &::after {
-            background-color: $c-tertiaryLight;
-        }
     }
 
     &__inner {

@@ -101,7 +101,8 @@ html {
 }
 
 .js-error-outline {
-  outline: 2px solid #00ccff;
+  -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 204, 255, 0.75);
+          box-shadow: 0px 0px 0px 3px rgba(0, 204, 255, 0.75);
 }
 
 .splide {
@@ -376,7 +377,7 @@ html {
   width: 60px;
   height: 60px;
   cursor: pointer;
-  background-color: rgba(79, 79, 79, 0.2);
+  background-color: transparent;
   outline: none;
   border: none;
   border-radius: 50%;
@@ -403,21 +404,13 @@ html {
   left: 50%;
   width: 55%;
   height: 3px;
-  background-color: #f2f2f2;
+  background-color: #00ccff;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-transition: background-color .4s, -webkit-transform .4s;
   transition: background-color .4s, -webkit-transform .4s;
   transition: transform .4s, background-color .4s;
   transition: transform .4s, background-color .4s, -webkit-transform .4s;
-}
-
-.c-burger:hover {
-  background-color: transparent;
-}
-
-.c-burger:hover .c-burger__inner, .c-burger:hover::before, .c-burger:hover::after {
-  background-color: #00ccff;
 }
 
 .c-burger__inner {
@@ -560,6 +553,7 @@ html {
 
 .c-input-group {
   position: relative;
+  text-align: left;
 }
 
 @media (min-width: 992px) {
@@ -571,12 +565,17 @@ html {
 
 .c-input-group__input, .c-input-group__textarea {
   border: 1px solid #276a9a;
+  border-radius: 3px;
   color: #276a9a;
   padding: 10px;
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 20px;
   width: 100%;
+  -webkit-transition: -webkit-box-shadow .4s;
+  transition: -webkit-box-shadow .4s;
+  transition: box-shadow .4s;
+  transition: box-shadow .4s, -webkit-box-shadow .4s;
 }
 
 .c-input-group__textarea {
@@ -609,8 +608,18 @@ html {
 .c-input-group__help {
   position: absolute;
   left: 0;
-  bottom: 3px;
+  bottom: -14px;
   color: #00ccff;
+  width: 0;
+  -webkit-transition: width 1.2s;
+  transition: width 1.2s;
+  overflow: hidden;
+  white-space: nowrap;
+  bottom: 3px;
+}
+
+.c-input-group__help.js-error-slide {
+  width: 100%;
 }
 
 .c-custom-checkbox {
@@ -620,6 +629,10 @@ html {
 
 .c-custom-checkbox__input {
   margin-right: 10px;
+  -webkit-transition: -webkit-box-shadow .4s;
+  transition: -webkit-box-shadow .4s;
+  transition: box-shadow .4s;
+  transition: box-shadow .4s, -webkit-box-shadow .4s;
 }
 
 .c-custom-checkbox__label {
@@ -631,6 +644,16 @@ html {
   left: 0;
   bottom: -14px;
   color: #00ccff;
+  width: 0;
+  -webkit-transition: width 1.2s;
+  transition: width 1.2s;
+  overflow: hidden;
+  white-space: nowrap;
+  bottom: -14px;
+}
+
+.c-custom-checkbox__help.js-error-slide {
+  width: 100%;
 }
 
 .l-container {

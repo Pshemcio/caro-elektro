@@ -77,6 +77,6 @@ html {
     }
 
     &-error-outline {
-        outline: 2px solid $c-tertiaryLight;
+        box-shadow: 0px 0px 0px 3px rgba($c-tertiaryLight, 0.75);
     }
 }

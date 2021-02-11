@@ -4,6 +4,7 @@
 
     &__input {
         margin-right: 10px;
+        transition: box-shadow .4s;
     }
 
     &__label {
@@ -11,9 +12,7 @@
     }
 
     &__help {
-        position: absolute;
-        left: 0;
+        @include inputHelpText;
         bottom: -14px;
-        color: $c-tertiaryLight;
     }
 }

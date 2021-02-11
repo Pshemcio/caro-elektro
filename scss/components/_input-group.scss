@@ -1,5 +1,7 @@
 .c-input-group {
+    $self: &;
     position: relative;
+    text-align: left;
 
     @include breakpoint(md) {
         flex-basis: 32%;
@@ -8,12 +10,14 @@
     &__input,
     &__textarea {
         border: 1px solid $c-tertiary;
+        border-radius: 3px;
         color: $c-tertiary;
         padding: 10px;
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 20px;
         width: 100%;
+        transition: box-shadow .4s;
     }
 
     &__textarea {
@@ -38,9 +42,7 @@
     }
 
     &__help {
-        position: absolute;
-        left: 0;
+        @include inputHelpText;
         bottom: 3px;
-        color: $c-tertiaryLight;
     }
 }

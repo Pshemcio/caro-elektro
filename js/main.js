@@ -406,7 +406,7 @@ const handleScrollEvents = () => {
     const offerStack = document.querySelector('#offer .l-stack').children;
 
     const splitDelay = height;
-    let test = 1200 < width ? 5 : 20;;
+    let parallaxSpeeed = 1200 < width ? 5 : 20;;
 
 
     for (let i = 0; i < offerStack.length; i++) {
@@ -414,18 +414,17 @@ const handleScrollEvents = () => {
         showCardItem(element);
     };
 
-    parallaxEffect(document.querySelector('.l-split__content'), test, splitDelay);
-    parallaxEffect(document.querySelector('.l-split--reverse .l-split__content'), test, splitDelay);
+    parallaxEffect(document.querySelector('.l-split__content'), parallaxSpeeed, splitDelay);
+    parallaxEffect(document.querySelector('.l-split--reverse .l-split__content'), parallaxSpeeed, splitDelay);
     parallaxEffect(headerHero, 5, splitDelay);
     parallaxEffect(splideList, 2, 0);
 };
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-let testArr = [];
+let inputFailArray = [];
 
 const checkLength = (input, min, max) => {
-    console.log(input.tagName)
     if (input.value.length === 0 && min > 0) {
         displayError(input, 'required', min, max)
     } else if (input.value.length < min) {
@@ -495,12 +494,16 @@ const checkFile = (input) => {
 
 const removeError = input => {
     input.classList.remove('js-error-outline');
-    input.parentElement.querySelector('small').textContent = '';
+    input.parentElement.querySelector('.js-error-msg').classList.remove('js-error-slide');
+
+    setTimeout(() => {
+        input.parentElement.querySelector('.js-error-msg').textContent = '';
+    }, 1200);
 };
 
 const displayError = (input, info, min, max) => {
     let mainText = '';
-    testArr.push(false);
+    inputFailArray.push(false);
     switch (info) {
         case 'required':
             mainText = `To pole jest wymagane.`;
@@ -532,18 +535,18 @@ const displayError = (input, info, min, max) => {
     }
 
     input.classList.add('js-error-outline');
-    input.parentElement.querySelector('small').textContent = mainText;
+    input.parentElement.querySelector('.js-error-msg').textContent = mainText;
+    input.parentElement.querySelector('.js-error-msg').classList.add('js-error-slide');
 };
 
 const checkInputs = e => {
-    if (testArr.length === 0) {
+    if (inputFailArray.length === 0) {
         e.preventDefault();
         console.log('wysyłam');
     } else {
         e.preventDefault();
-        console.log('błąd');
     };
-    testArr = [];
+    inputFailArray = [];
 };
 
 const formValidation = (e) => {

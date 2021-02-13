@@ -369,6 +369,19 @@ html {
   }
 }
 
+.subpage .c-hero__heading {
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin-bottom: 26px;
+}
+
+@media (min-width: 768px) {
+  .subpage .c-hero__heading {
+    font-weight: 500;
+    font-size: 4vw;
+  }
+}
+
 .c-burger {
   position: fixed;
   top: 30px;
@@ -732,6 +745,10 @@ html {
 
 .l-wrapper--dark {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.subpage .l-wrapper--dark {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #main-nav {
@@ -1348,5 +1365,38 @@ html {
   position: relative;
   width: 100%;
   height: 100vh;
+}
+
+#main-header.subpage__installations {
+  background-size: cover;
+  height: 70vh;
+  background-position: center center;
+  background-image: url(../img/installations-bg.jfif);
+}
+
+#main-header.subpage__installations .l-wrapper {
+  height: 100%;
+}
+
+#main-header.subpage__lan-installations {
+  background-size: cover;
+  height: 70vh;
+  background-position: center center;
+  background-image: url(../img/lan-installations-bg.jpg);
+}
+
+#main-header.subpage__lan-installations .l-wrapper {
+  height: 100%;
+}
+
+#main-header.subpage__monitoring {
+  background-size: cover;
+  height: 70vh;
+  background-position: center center;
+  background-image: url(../../img/monitoring.bg.jpg);
+}
+
+#main-header.subpage__monitoring .l-wrapper {
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */

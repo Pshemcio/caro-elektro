@@ -18,3 +18,13 @@
         width: 100%;
     }
 }
+
+@mixin subpagesHeader {
+    background-size: cover;
+    height: 70vh;
+    background-position: center center;
+
+    .l-wrapper {
+        height: 100%;
+    }
+}

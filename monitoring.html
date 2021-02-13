@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro-elektro - Monitoring</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <nav id="main-nav">
+        <button class="c-burger">
+            <span class="c-burger__inner"></span>
+        </button>
+        <div class="l-main-nav">
+            <a data-scroll href="index.html" class="c-logo">
+                <img src="icons/logo.svg" alt="lighting in circle" class="c-logo__icon">
+                <span class="c-logo__text">CARO Instalacje Elektryczne</span>
+            </a>
+            <ul class="c-menu">
+                <li class="c-menu__item">
+                    <a data-scroll href="index.html" class="c-menu__link">Strona główna</a>
+                </li>
+                <li class="c-menu__item">
+                    <a data-scroll href="instalacje.html" class="c-menu__link">instalacje elektryczne</a>
+                </li>
+                <li class="c-menu__item">
+                    <a data-scroll href="#subpage-content" class="c-menu__link">monitoring</a>
+                </li>
+                <li class="c-menu__item">
+                    <a data-scroll href="instalacje-lan.html" class="c-menu__link">instalacje lan</a>
+                </li>
+                <li class="c-menu__item">
+                    <a data-scroll href="#contact" class="c-menu__link">kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="main-header" class="subpage subpage__monitoring">
+        <div class="l-wrapper l-wrapper--dark">
+            <div class="c-hero">
+                <h1 class="c-hero__heading">
+                    <span class="c-hero__heading-inner">
+                        Monitoring
+                    </span>
+                </h1>
+                <p class="c-hero__decoration">
+                    <i class="fas fa-bolt"></i>
+                </p>
+                <p class="c-hero__paragraph">
+                    Zwiększ bezpieczeństwo w swoim domu lub firmie, inwestując w nowoczesne systemy dozoru wizyjnego.
+                </p>
+                <a data-scroll href="#contact" class="c-button c-button--transparent">
+                    Kontakt
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="contact">
+        <div class="l-container l-container--contact">
+            <h2 class="l-container__heading">kontakt</h2>
+            <p class="l-container__paragraph">
+                Serdecznie zapraszamy do kontaktu przez formularz bądź telefonicznie!
+            </p>
+            <div class="l-container--swap">
+                <div class="l-form">
+                    <h3 class="l-form__heading">
+                        Masz pytanie?
+                    </h3>
+                    <p class="l-form__paragraph">
+                        Napisz je tutaj a my się z Tobą skontaktujemy.
+                    </p>
+                    <form action="" method="POST" class="l-form__inner">
+                        <div class="l-form__wrap">
+                            <div class="c-input-group">
+                                <input type="text" name="name" id="name" required class="c-input-group__input"
+                                    placeholder="Imię/firma">
+                                <small class="c-input-group__help js-error-msg"></small>
+                            </div>
+                            <div class="c-input-group">
+                                <input type="email" name="email" id="email" required class="c-input-group__input"
+                                    placeholder="Email">
+                                <small class="c-input-group__help js-error-msg"></small>
+                            </div>
+                            <div class="c-input-group">
+                                <input type="tel" name="phone" id="phone" required class="c-input-group__input"
+                                    placeholder="Telefon">
+                                <small class="c-input-group__help js-error-msg"></small>
+                            </div>
+                        </div>
+                        <div class="c-input-group">
+                            <textarea name="message" id="message" class="c-input-group__textarea"
+                                placeholder="Wiadomość"></textarea>
+                            <small class="c-input-group__help js-error-msg"></small>
+                        </div>
+                        <div class="l-form__wrap">
+                            <div class="c-custom-checkbox">
+                                <input type="checkbox" name="agreement" required id="agreement"
+                                    class="c-custom-checkbox__input">
+                                <label for="agreement" class="c-custom-checkbox__label">Wyrażam zgodę
+                                    na
+                                    przetwarzanie moich
+                                    danych
+                                    osobowych.
+                                </label>
+                                <small class="c-custom-checkbox__help js-error-msg"></small>
+                            </div>
+                            <div class="c-input-group">
+                                <input type="file" name="photo" id="photo" class="c-input-group__file">
+                                <small class="c-input-group__help js-error-msg"></small>
+                            </div>
+                        </div>
+                        <button type="submit" class="c-button c-button--small">Wyślij</button>
+                    </form>
+                </div>
+                <div class="l-stack l-stack--contact">
+                    <a href="tel:+4888224125" class="c-button--contact">
+                        <i class="fas fa-phone-square c-button__icon"></i>
+                        <span class="c-button__text">
+                            +48884125168
+                        </span>
+                    </a>
+                    <a href="mailto:caroelektro.rafal@gmail.com" class="c-button--contact">
+                        <i class="fas fa-envelope c-button__icon"></i>
+                        <span class="c-button__text">
+                            caroelektro.rafal@gmail
+                        </span>
+                    </a>
+                    <a href="https://goo.gl/maps/gaLZfdwqQeXA9BBc6" target="_BLANK" class="c-button--contact">
+                        <i class="fas fa-map-marked-alt c-button__icon"></i>
+                        <span class="c-button__text">
+                            Jak dojechać?
+                        </span>
+                    </a>
+                    <a href="https://www.facebook.com/Raf.Ralph" target="_BLANK" class=" c-button--contact">
+                        <i class="fab fa-facebook-square c-button__icon"></i>
+                        <span class="c-button__text">
+                            Facebook
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <footer id="main-footer" class="c-footer">
+                <a href="https://github.com/Pshemcio" class="c-footer__text">PROJEKT, REALIZACJA: PRZEMYSŁAW MAJKA</a>
+            </footer>
+        </div>
+    </section>
+
+
+    <script src="https://kit.fontawesome.com/a330ae9e9c.js" crossorigin="anonymous"></script>
+
+    <script src="js/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/subpages.js"></script>
+
+</body>
+
+</html>

@@ -71,7 +71,8 @@
                     <i class="fas fa-bolt"></i>
                 </p>
                 <p class="c-hero__paragraph">
-                    Zwiększ bezpieczeństwo w swoim domu lub firmie, inwestując w nowoczesne systemy dozoru wizyjnego.
+                    Postaw na pełnych pasji profesjonalistów. Już dziś umów się z nami na spotkanie i ciesz się fachową
+                    obsługą!
                 </p>
                 <a data-scroll href="#contact" class="c-button c-button--transparent">
                     Kontakt
@@ -93,7 +94,7 @@
             instalacji, które wykonujemy.
         </p>
         <div class="l-stack l-stack--horizontal">
-            <a href="#" class="c-card c-card--electrical">
+            <a href="instalacje.html" class="c-card c-card--electrical">
                 <div class="c-card__inner">
                     <img src="icons/lightbulb.svg" alt="lightbulb" class="c-card__icon">
                 </div>
@@ -101,7 +102,7 @@
                     Instalacje elektryczne
                 </h3>
             </a>
-            <a href="#" class="c-card c-card--monitoring">
+            <a href="monitoring.html" class="c-card c-card--monitoring">
                 <div class="c-card__inner">
                     <img src="icons/camera.svg" alt="cctv camera" class="c-card__icon">
                 </div>
@@ -109,7 +110,7 @@
                     Monitoring
                 </h3>
             </a>
-            <a href="#" class="c-card c-card--lan">
+            <a href="instalacje-lan.html" class="c-card c-card--lan">
                 <div class="c-card__inner">
                     <img src="icons/computer.svg" alt="computer" class="c-card__icon">
                 </div>
@@ -280,20 +281,20 @@
                     <p class="l-form__paragraph">
                         Napisz je tutaj a my się z Tobą skontaktujemy.
                     </p>
-                    <form action="POST" class="l-form__inner">
+                    <form action="" method="POST" class="l-form__inner">
                         <div class="l-form__wrap">
                             <div class="c-input-group">
-                                <input type="text" name="name" id="name" class="c-input-group__input"
+                                <input type="text" name="name" id="name" required class="c-input-group__input"
                                     placeholder="Imię/firma">
                                 <small class="c-input-group__help js-error-msg"></small>
                             </div>
                             <div class="c-input-group">
-                                <input type="email" name="email" id="email" class="c-input-group__input"
+                                <input type="email" name="email" id="email" required class="c-input-group__input"
                                     placeholder="Email">
                                 <small class="c-input-group__help js-error-msg"></small>
                             </div>
                             <div class="c-input-group">
-                                <input type="tel" name="phone" id="phone" class="c-input-group__input"
+                                <input type="tel" name="phone" id="phone" required class="c-input-group__input"
                                     placeholder="Telefon">
                                 <small class="c-input-group__help js-error-msg"></small>
                             </div>
@@ -305,7 +306,8 @@
                         </div>
                         <div class="l-form__wrap">
                             <div class="c-custom-checkbox">
-                                <input type="checkbox" name="agreement" id="agreement" class="c-custom-checkbox__input">
+                                <input type="checkbox" name="agreement" required id="agreement"
+                                    class="c-custom-checkbox__input">
                                 <label for="agreement" class="c-custom-checkbox__label">Wyrażam zgodę
                                     na
                                     przetwarzanie moich
@@ -363,6 +365,7 @@
 
     <script src="js/smooth-scroll.polyfills.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

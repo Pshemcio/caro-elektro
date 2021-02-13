@@ -12,3 +12,11 @@
         background-color: rgba(0, 0, 0, 0.1);
     }
 }
+
+.subpage {
+    .l-wrapper {
+        &--dark {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+}

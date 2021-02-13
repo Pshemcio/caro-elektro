@@ -86,3 +86,18 @@
         }
     }
 }
+
+.subpage {
+    .c-hero {
+        &__heading {
+            font-weight: 400;
+            font-size: 2.4rem;
+            margin-bottom: 26px;
+
+            @include breakpoint(sm) {
+                font-weight: 500;
+                font-size: 4vw;
+            }
+        }
+    }
+}

@@ -21,7 +21,10 @@ const mainNav = document.getElementById('main-nav'),
     height = window.innerHeight || document.documentElement.clientHeight ||
         document.body.clientHeight,
     width = window.innerWidth || document.documentElement.clientWidth ||
-        document.body.clientWidth;
+        document.body.clientWidth,
+    hoverMenuBtn = document.querySelector('.c-menu__link--hover-menu'),
+    hoverMenu = document.querySelector('.c-menu--hover');
+
 
 const itemsDisplay = (itemsContainer, action) => {
     const itemsList = itemsContainer.childNodes;
@@ -49,9 +52,19 @@ const showBurgerMenu = (menu, btn) => {
     });
 };
 
-const handleBurgerMenu = () => {
+const handleBurgerMenu = (e) => {
     const burgerBtn = mainNav.querySelector('.c-burger');
     const menu = mainNav.querySelector('.l-main-nav');
+
+    if (e.target === hoverMenuBtn) {
+        return;
+    };
+
+    if (hoverMenu) {
+        if (e.target !== hoverMenuBtn && e.target !== burgerBtn) {
+            hoverMenu.classList.remove('show-menu');
+        };
+    };
 
     showBurgerMenu(menu, burgerBtn);
 };
@@ -109,7 +122,7 @@ const showCardItem = element => {
         return;
     };
 
-    if (window.pageYOffset > element.getBoundingClientRect().top + (window.pageYOffset / 1.4)) {
+    if (window.pageYOffset > element.getBoundingClientRect().top + (window.pageYOffset / 1.6)) {
         element.classList.remove('js-hide-card');
     };
 }

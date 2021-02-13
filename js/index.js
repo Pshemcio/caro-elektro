@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     prepareCards();
 
     showMoreBtn.addEventListener('click', handleShowMoreBtnClick);
-
+    hoverMenuBtn.addEventListener('click', showHiddenMenu);
     window.addEventListener('scroll', handleScrollEvents);
 });
 
@@ -16,6 +16,11 @@ const myGallery = document.querySelector('.my-gallery'),
     offerStack = document.querySelector('#offer .l-stack').children,
     photosShown = Math.floor(getComputedStyle(document.documentElement)
         .getPropertyValue('--js-photos-quantity'));
+
+
+const showHiddenMenu = () => {
+    hoverMenu.classList.toggle('show-menu');
+};
 
 const initSplideSlider = () => {
     new Splide('.header-splide', {

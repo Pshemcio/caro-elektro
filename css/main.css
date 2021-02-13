@@ -808,6 +808,7 @@ html {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+    padding: 0 20px;
   }
 }
 
@@ -844,13 +845,24 @@ html {
     display: flex;
     background-color: transparent;
     border: none;
-    width: 40%;
+    width: 80%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     margin: 0;
   }
 }
 
 .c-menu__item {
-  width: 100%;
+  width: auto;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c-menu__item--hover-menu:hover .c-menu--hover {
+    height: 120px;
+    padding-bottom: 5px;
+  }
 }
 
 .c-menu__link {
@@ -864,17 +876,18 @@ html {
   -webkit-transition: color .4s;
   transition: color .4s;
   outline: none;
+  cursor: pointer;
 }
 
 @media (min-width: 512px) {
   .c-menu__link {
-    padding: .8rem 0;
+    padding: .8rem 1.1rem;
   }
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
   .c-menu__link {
-    padding: 2rem 0;
+    padding: 2rem 1rem;
   }
 }
 
@@ -884,8 +897,41 @@ html {
   }
 }
 
+.c-menu__link--main-site {
+  padding: .6rem 0;
+}
+
 .c-menu__link:hover, .c-menu__link:focus {
   color: #00ccff;
+}
+
+.c-menu--hover {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .4s;
+  transition: height .4s;
+}
+
+.c-menu--hover.show-menu {
+  height: 145px;
+}
+
+@media (min-width: 1200px) {
+  .c-menu--hover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(79, 79, 79, 0.5);
+  }
+  .c-menu--hover.show-menu {
+    height: 120px;
+    padding-bottom: 5px;
+  }
 }
 
 .c-logo {
@@ -906,7 +952,6 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-left: 25px;
   }
 }
 
@@ -1371,7 +1416,7 @@ html {
   background-size: cover;
   height: 70vh;
   background-position: center center;
-  background-image: url(../img/installations-bg.jfif);
+  background-image: url(../img/installations-bg.jpg);
 }
 
 #main-header.subpage__installations .l-wrapper {

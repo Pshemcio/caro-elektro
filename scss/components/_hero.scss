@@ -94,9 +94,20 @@
             font-size: 2.4rem;
             margin-bottom: 26px;
 
-            @include breakpoint(sm) {
+
+            @include breakpoint(xs) {
+                font-weight: 500;
+                font-size: 2rem;
+            }
+
+            @include breakpoint(md) {
                 font-weight: 500;
                 font-size: 4vw;
+            }
+
+            @include breakpointPortrait(sm) {
+                font-weight: 500;
+                font-size: 3.5rem;
             }
         }
     }

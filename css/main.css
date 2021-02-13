@@ -375,10 +375,24 @@ html {
   margin-bottom: 26px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 512px) {
+  .subpage .c-hero__heading {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
   .subpage .c-hero__heading {
     font-weight: 500;
     font-size: 4vw;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .subpage .c-hero__heading {
+    font-weight: 500;
+    font-size: 3.5rem;
   }
 }
 
@@ -1413,10 +1427,23 @@ html {
 }
 
 #main-header.subpage__installations {
-  background-size: cover;
+  background-size: 200%;
   height: 70vh;
   background-position: center center;
+  overflow: hidden;
   background-image: url(../img/installations-bg.jpg);
+}
+
+@media (min-width: 512px) {
+  #main-header.subpage__installations {
+    background-size: 100%;
+  }
+}
+
+@media (min-width: 512px) and (orientation: portrait) {
+  #main-header.subpage__installations {
+    background-size: 180%;
+  }
 }
 
 #main-header.subpage__installations .l-wrapper {
@@ -1424,10 +1451,23 @@ html {
 }
 
 #main-header.subpage__lan-installations {
-  background-size: cover;
+  background-size: 200%;
   height: 70vh;
   background-position: center center;
+  overflow: hidden;
   background-image: url(../img/lan-installations-bg.jpg);
+}
+
+@media (min-width: 512px) {
+  #main-header.subpage__lan-installations {
+    background-size: 100%;
+  }
+}
+
+@media (min-width: 512px) and (orientation: portrait) {
+  #main-header.subpage__lan-installations {
+    background-size: 180%;
+  }
 }
 
 #main-header.subpage__lan-installations .l-wrapper {
@@ -1435,10 +1475,23 @@ html {
 }
 
 #main-header.subpage__monitoring {
-  background-size: cover;
+  background-size: 200%;
   height: 70vh;
   background-position: center center;
-  background-image: url(../../img/monitoring.bg.jpg);
+  overflow: hidden;
+  background-image: url(../img/monitoring.bg.jpg);
+}
+
+@media (min-width: 512px) {
+  #main-header.subpage__monitoring {
+    background-size: 100%;
+  }
+}
+
+@media (min-width: 512px) and (orientation: portrait) {
+  #main-header.subpage__monitoring {
+    background-size: 180%;
+  }
 }
 
 #main-header.subpage__monitoring .l-wrapper {

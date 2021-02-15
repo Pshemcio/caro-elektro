@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 });
 
-const subpage = document.querySelector('.subpage');
+const subpage = document.querySelector('.js-subpage');
 let bgInitialSize = parseInt(window.getComputedStyle(subpage).getPropertyValue('background-size').slice(0, -1));
 
 const bgSizeChange = (section, speed) => {
     const deviceSpeed = (width / 100) * speed;
 
-    if (100 > section.getBoundingClientRect().top + height) {
+    if (-100 > section.getBoundingClientRect().top + height) {
         return;
     };
 

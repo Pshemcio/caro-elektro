@@ -27,10 +27,16 @@
 
     @include breakpoint(xs) {
         background-size: 100%;
+        height: 100vh;
+    }
+
+    @include breakpoint(md) {
+        height: 70vh;
     }
 
     @include breakpointPortrait(xs) {
         background-size: 180%;
+        height: 70vh;
     }
 
     .l-wrapper {

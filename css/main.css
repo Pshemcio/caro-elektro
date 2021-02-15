@@ -26,6 +26,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #f2f2f2;
+}
+
 .js-hide {
   display: none;
 }
@@ -110,6 +114,11 @@ html {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+}
+
+.splide__track {
+  height: 100%;
 }
 
 .header-btns {
@@ -287,7 +296,7 @@ html {
 
 .c-hero__heading {
   font-weight: 400;
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   margin-bottom: 26px;
 }
 
@@ -300,6 +309,7 @@ html {
 
 .c-hero__heading-inner {
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .c-hero__decoration {
@@ -495,6 +505,7 @@ html {
     -ms-flex-preferred-size: 32%;
         flex-basis: 32%;
     height: 18vw;
+    max-height: 300px;
   }
   .c-card:nth-of-type(odd) {
     -webkit-transform: translateY(20px);
@@ -687,6 +698,8 @@ html {
   padding: 3rem 1.5rem;
   text-align: center;
   background-color: #f2f2f2;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 @media (min-width: 512px) {
@@ -703,7 +716,7 @@ html {
 
 .l-container__heading {
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 400;
   margin-bottom: 1.2rem;
   color: #4f4f4f;
@@ -723,8 +736,7 @@ html {
 }
 
 .l-container--contact {
-  background-image: url(../img/footer.png);
-  background-size: cover;
+  background-color: transparent;
   padding-bottom: 2vh;
 }
 
@@ -745,7 +757,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -886,7 +898,7 @@ html {
   width: 100%;
   text-align: center;
   padding: 1.6rem 0;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   -webkit-transition: color .4s;
   transition: color .4s;
   outline: none;
@@ -907,7 +919,7 @@ html {
 
 @media (min-width: 1200px) {
   .c-menu__link {
-    font-size: 1rem;
+    font-size: .85rem;
   }
 }
 
@@ -1039,6 +1051,8 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
 @media (min-width: 992px) {
@@ -1168,6 +1182,8 @@ html {
   background-color: #276a9a;
   color: #f2f2f2;
   text-align: center;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 @media (min-width: 992px) {
@@ -1420,10 +1436,102 @@ html {
   }
 }
 
+body {
+  background-color: #fff;
+}
+
+.l-subpage-content {
+  text-align: center;
+  color: #4f4f4f;
+  padding: 3rem 1rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 512px) {
+  .l-subpage-content {
+    padding: 3rem 5rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .l-subpage-content {
+    padding: 3rem 0;
+  }
+}
+
+.l-subpage-content__heading {
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: -2px;
+}
+
+@media (min-width: 1200px) {
+  .l-subpage-content__heading {
+    font-weight: 400;
+  }
+}
+
+.l-subpage-content__heading--second {
+  font-size: 2.1rem;
+  margin: 20px 0;
+}
+
+.l-subpage-content__paragraph {
+  margin-bottom: 15px;
+  line-height: 1.7rem;
+}
+
+.l-subpage-content__paragraph--justify {
+  text-align: justify;
+}
+
+.l-subpage-content__list {
+  list-style: none;
+  text-align: left;
+  font-size: .9rem;
+}
+
+.l-subpage-content__list-item {
+  position: relative;
+  margin: 4px;
+  padding-bottom: 2px;
+  line-height: 1.6rem;
+  padding-left: 20px;
+  margin-left: 10px;
+}
+
+.l-subpage-content__list-item::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0px;
+  color: #2a8db9;
+}
+
 #main-header {
   position: relative;
   width: 100%;
   height: 100vh;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  #main-header {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 992px) and (orientation: portrait) {
+  #main-header {
+    height: 60vh;
+  }
+}
+
+#contact {
+  background-image: url(../img/footer.png);
+  background-size: cover;
 }
 
 #main-header.subpage__installations {
@@ -1437,12 +1545,20 @@ html {
 @media (min-width: 512px) {
   #main-header.subpage__installations {
     background-size: 100%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  #main-header.subpage__installations {
+    height: 70vh;
   }
 }
 
 @media (min-width: 512px) and (orientation: portrait) {
   #main-header.subpage__installations {
     background-size: 180%;
+    height: 70vh;
   }
 }
 
@@ -1461,12 +1577,20 @@ html {
 @media (min-width: 512px) {
   #main-header.subpage__lan-installations {
     background-size: 100%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  #main-header.subpage__lan-installations {
+    height: 70vh;
   }
 }
 
 @media (min-width: 512px) and (orientation: portrait) {
   #main-header.subpage__lan-installations {
     background-size: 180%;
+    height: 70vh;
   }
 }
 
@@ -1485,12 +1609,20 @@ html {
 @media (min-width: 512px) {
   #main-header.subpage__monitoring {
     background-size: 100%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  #main-header.subpage__monitoring {
+    height: 70vh;
   }
 }
 
 @media (min-width: 512px) and (orientation: portrait) {
   #main-header.subpage__monitoring {
     background-size: 180%;
+    height: 70vh;
   }
 }
 

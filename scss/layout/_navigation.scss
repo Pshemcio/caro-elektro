@@ -85,7 +85,7 @@
         width: 100%;
         text-align: center;
         padding: 1.6rem 0;
-        font-size: 1.35rem;
+        font-size: 1.2rem;
         transition: color .4s;
         outline: none;
         cursor: pointer;
@@ -99,7 +99,7 @@
         }
 
         @include breakpoint(lg) {
-            font-size: 1rem;
+            font-size: .85rem;
         }
 
         &--main-site {

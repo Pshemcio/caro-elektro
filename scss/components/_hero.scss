@@ -17,7 +17,7 @@
 
     &__heading {
         font-weight: 400;
-        font-size: 2.4rem;
+        font-size: 2.3rem;
         margin-bottom: 26px;
 
         @include breakpoint(sm) {
@@ -28,6 +28,7 @@
 
     &__heading-inner {
         white-space: nowrap;
+        overflow: hidden;
     }
 
     &__decoration {

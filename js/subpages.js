@@ -11,8 +11,11 @@ const subpage = document.querySelector('.subpage');
 let bgInitialSize = parseInt(window.getComputedStyle(subpage).getPropertyValue('background-size').slice(0, -1));
 
 const bgSizeChange = (section, speed) => {
-    console.log(width)
     const deviceSpeed = (width / 100) * speed;
+
+    if (100 > section.getBoundingClientRect().top + height) {
+        return;
+    };
 
     section.style.backgroundSize = `${bgInitialSize + (window.scrollY / deviceSpeed)}%`;
 };

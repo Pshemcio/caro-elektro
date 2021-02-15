@@ -2,4 +2,17 @@
     position: relative;
     width: 100%;
     height: 100vh;
+
+    @include breakpointPortrait(sm) {
+        height: 80vh;
+    }
+
+    @include breakpointPortrait(md) {
+        height: 60vh;
+    }
+}
+
+#contact {
+    background-image: url(../img/footer.png);
+    background-size: cover;
 }

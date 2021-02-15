@@ -1,0 +1,70 @@
+body {
+    background-color: #fff;
+}
+
+.l-subpage-content {
+    text-align: center;
+    color: $c-secondary;
+    padding: 3rem 1rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include breakpoint(xs) {
+        padding: 3rem 5rem;
+    }
+
+    @include breakpoint(xl) {
+        padding: 3rem 0;
+    }
+
+    &__heading {
+        margin-bottom: 20px;
+        font-weight: 300;
+        font-size: 2.5rem;
+        letter-spacing: -2px;
+
+        @include breakpoint(lg) {
+            font-weight: 400;
+        }
+
+        &--second {
+            font-size: 2.1rem;
+            margin: 20px 0;
+        }
+    }
+
+    &__paragraph {
+        margin-bottom: 15px;
+        line-height: 1.7rem;
+
+        &--justify {
+            text-align: justify;
+        }
+    }
+
+    // &__list-container {}
+
+    &__list {
+        list-style: none;
+        text-align: left;
+        font-size: .9rem;
+    }
+
+    &__list-item {
+        position: relative;
+        margin: 4px;
+        padding-bottom: 2px;
+        line-height: 1.6rem;
+        padding-left: 20px;
+        margin-left: 10px;
+
+        &::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0px;
+            color: #2a8db9;
+        }
+    }
+}

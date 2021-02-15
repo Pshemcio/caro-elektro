@@ -16,6 +16,7 @@
     @include breakpoint(md) {
         flex-basis: 32%;
         height: 18vw;
+        max-height: 300px;
 
         &:nth-of-type(odd) {
             transform: translateY(20px);

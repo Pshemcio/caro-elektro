@@ -9,6 +9,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: $c-primary;
+}
+
 .js {
     &-hide {
         display: none;

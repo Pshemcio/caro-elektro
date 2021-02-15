@@ -4,6 +4,8 @@
     background-color: $c-tertiary;
     color: $c-primary;
     text-align: center;
+    max-width: 1920px;
+    margin: 0 auto;
 
     @include breakpoint(md) {
         flex-direction: row;

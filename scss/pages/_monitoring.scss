@@ -1,4 +1,4 @@
-#main-header.subpage__monitoring {
-    @include subpagesHeader;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, .2)), url(../img/monitoring.bg.jpg);
+.subpage__header-bg--monitoring {
+    @include subpagesHeaderBg;
+    background-image: url(../img/monitoring.bg.jpg);
 }

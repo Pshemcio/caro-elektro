@@ -68,3 +68,21 @@ body {
         }
     }
 }
+
+#main-header.l-subpage__header {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+
+    @include breakpoint(xs) {
+        height: 100vh;
+    }
+
+    @include breakpoint(sm) {
+        height: 70vh;
+    }
+
+    @include breakpointPortrait(xs) {
+        height: 70vh;
+    }
+}

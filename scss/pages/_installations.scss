@@ -1,4 +1,4 @@
-#main-header.subpage__installations {
-    @include subpagesHeader;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, .3)), url(../img/installations-bg.jpg);
+.subpage__header-bg--installations {
+    @include subpagesHeaderBg;
+    background-image: url(../img/installations-bg.jpg);
 }

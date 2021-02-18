@@ -2,31 +2,26 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScrollEvents);
-    window.addEventListener('resize', () => {
-        bgInitialSize = parseInt(window.getComputedStyle(subpage).getPropertyValue('background-size').slice(0, -1));
-    })
 });
 
-const subpage = document.querySelector('.js-subpage');
-let bgInitialSize = parseInt(window.getComputedStyle(subpage).getPropertyValue('background-size').slice(0, -1));
+const subpage = document.querySelector('.subpage__header-bg');
 
-const bgSizeChange = (section, speed) => {
-    // const deviceSpeed = (width / 100) * speed;
-    let deviceSpeed = speed;
-    if (width > 1000) {
-        deviceSpeed = speed * 3.5;
+const bgSizeChange = (element, speed) => {
+    let deviceSpeed = speed * 500;
+    if (width > 700) {
+        deviceSpeed = speed * 1000;
     }
 
-    if (-1000 > section.getBoundingClientRect().bottom) {
+    if (-500 > element.parentElement.getBoundingClientRect().bottom) {
         return;
     };
 
-    section.style.backgroundSize = `${bgInitialSize + (window.pageYOffset / deviceSpeed)}%`;
+    element.style.transform = `scale(${1 + ((window.pageYOffset) / (deviceSpeed))})`;
 };
 
 const handleScrollEvents = () => {
     const splitDelay = height;
 
     parallaxEffect(headerHero, 5, splitDelay);
-    bgSizeChange(subpage, 40);
+    bgSizeChange(subpage, 5);
 };

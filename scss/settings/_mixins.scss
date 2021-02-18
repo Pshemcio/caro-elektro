@@ -19,28 +19,13 @@
     }
 }
 
-@mixin subpagesHeader {
-    background-size: 230%;
-    height: 70vh;
+@mixin subpagesHeaderBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
     background-position: center center;
     overflow: hidden;
-
-    @include breakpoint(xs) {
-        background-size: 100%;
-        height: 100vh;
-    }
-
-    @include breakpoint(sm) {
-        background-size: 100%;
-        height: 70vh;
-    }
-
-    @include breakpointPortrait(xs) {
-        background-size: 180%;
-        height: 70vh;
-    }
-
-    .l-wrapper {
-        height: 100%;
-    }
 }

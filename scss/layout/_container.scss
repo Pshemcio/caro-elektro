@@ -37,6 +37,14 @@
         padding-bottom: 2vh;
     }
 
+    &--subpage {
+        padding-top: 30px;
+
+        @include breakpoint(xs) {
+            padding-top: 0;
+        }
+    }
+
     &--swap {
         @include breakpoint(md) {
             display: flex;

@@ -8,7 +8,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
   :root {
     --js-photos-quantity: 12;
   }
@@ -300,7 +300,7 @@ body {
   margin-bottom: 26px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
   .c-hero__heading {
     font-weight: 500;
     font-size: 5vw;
@@ -318,7 +318,7 @@ body {
   margin: 0 auto 26px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
   .c-hero__decoration {
     margin: 0 auto 80px;
   }
@@ -361,7 +361,7 @@ body {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
   .c-hero__paragraph {
     position: absolute;
     display: block;
@@ -399,7 +399,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: 840px) and (orientation: portrait) {
   .subpage .c-hero__heading {
     font-weight: 500;
     font-size: 3.5rem;
@@ -494,7 +494,7 @@ body {
   transition: background-size .4s;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
   .c-card {
     height: 40vw;
   }
@@ -626,7 +626,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
   .c-input-group__textarea {
     height: 20vh;
   }
@@ -740,6 +740,16 @@ body {
   padding-bottom: 2vh;
 }
 
+.l-container--subpage {
+  padding-top: 30px;
+}
+
+@media (min-width: 512px) {
+  .l-container--subpage {
+    padding-top: 0;
+  }
+}
+
 @media (min-width: 992px) {
   .l-container--swap {
     display: -webkit-box;
@@ -812,7 +822,7 @@ body {
   transition: transform .1s .3s, opacity .4s, -webkit-transform .1s .3s;
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: 840px) and (orientation: portrait) {
   .l-main-nav {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -911,7 +921,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: 840px) and (orientation: portrait) {
   .c-menu__link {
     padding: 2rem 1rem;
   }
@@ -981,7 +991,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: 840px) and (orientation: portrait) {
   .c-logo {
     padding-bottom: 20px;
   }
@@ -1239,7 +1249,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: 840px) and (orientation: portrait) {
   .l-split__image {
     height: 40vh;
   }
@@ -1517,7 +1527,7 @@ body {
   height: 100vh;
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: 840px) and (orientation: portrait) {
   #main-header {
     height: 80vh;
   }
@@ -1549,7 +1559,7 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 840px) {
   #main-header.subpage__installations {
     height: 70vh;
   }
@@ -1581,7 +1591,7 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 840px) {
   #main-header.subpage__lan-installations {
     height: 70vh;
   }
@@ -1613,7 +1623,7 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 840px) {
   #main-header.subpage__monitoring {
     height: 70vh;
   }

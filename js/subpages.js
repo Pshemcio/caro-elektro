@@ -11,9 +11,13 @@ const subpage = document.querySelector('.js-subpage');
 let bgInitialSize = parseInt(window.getComputedStyle(subpage).getPropertyValue('background-size').slice(0, -1));
 
 const bgSizeChange = (section, speed) => {
-    const deviceSpeed = (width / 100) * speed;
+    // const deviceSpeed = (width / 100) * speed;
+    let deviceSpeed = speed;
+    if (width > 1000) {
+        deviceSpeed = speed * 3;
+    }
 
-    if (-100 > section.getBoundingClientRect().top + height) {
+    if (-1000 > section.getBoundingClientRect().bottom) {
         return;
     };
 
@@ -24,5 +28,5 @@ const handleScrollEvents = () => {
     const splitDelay = height;
 
     parallaxEffect(headerHero, 5, splitDelay);
-    bgSizeChange(subpage, 4);
+    bgSizeChange(subpage, 20);
 };

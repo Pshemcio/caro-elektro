@@ -30,7 +30,7 @@
         height: 100vh;
     }
 
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
         height: 70vh;
     }
 

@@ -1,4 +1,4 @@
 #main-header.subpage__lan-installations {
     @include subpagesHeader;
-    background-image: url(../img/lan-installations-bg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, .3)), url(../img/lan-installations-bg.jpg);
 }

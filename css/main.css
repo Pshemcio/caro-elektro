@@ -1264,18 +1264,18 @@ body {
 }
 
 .l-split__content {
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 4rem;
 }
 
 @media (min-width: 512px) {
   .l-split__content {
-    padding: 2rem 5rem;
+    padding: 3rem 5rem 4rem;
   }
 }
 
 @media (min-width: 992px) {
   .l-split__content {
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 3rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1292,6 +1292,12 @@ body {
 @media (min-width: 1200px) {
   .l-split__content {
     padding: 2rem 6rem;
+  }
+}
+
+@media (min-width: 512px) and (orientation: portrait) {
+  .l-split__content {
+    padding: 4rem 3rem 6rem;
   }
 }
 
